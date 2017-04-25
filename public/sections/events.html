@@ -1,0 +1,298 @@
+<!--
+
+  Todo el código de esta sección debe ir dentro del div.
+  Para añadir CSS edita el archivo ubicado en /css/events.css
+
+-->
+
+
+
+<div class="seccion-events">
+	<div class="menu-events">
+		<div class="menu tusEventos">EVENTOS</div>
+		<div class="menu crearEventos">CREAR EVENTOS</div>
+		<div class="menu calendario">CALENDARIO</div>
+		<!--<div class="menu horario">HORARIO</div>-->
+	</div>
+	<div class="div-button">
+		<button type="button" class="boton">All</button>
+		<button type="button" class="boton">Pruebas</button>
+		<button type="button" class="boton">Carretes</button>
+	</div>
+
+		<div class="container-events all">
+			<div class="form-event">
+				<p id="form-text-top">#Fin de Semestre</p> 
+				<img src="http://i.imgur.com/WFd5dkK.png" height="150" width="300">
+				<p id="form-text-bottom">01 Enero</p>
+				<p id="form-text-lugar">Punto de Quiebre 23:50hrs</p>
+			</div>
+			<div class="form-event">
+				<p id="form-text-top">#Cumpleaños ICI</p> 
+				<img src="http://i.imgur.com/rLkO5rc.png" height="150" width="300">
+				<p id="form-text-bottom">31 Febrero</p>
+				<p id="form-text-lugar">edicio 10k</p>
+			</div>
+			<div class="form-event">
+				<p id="form-text-top">#Prueba Calculo 3</p> 
+				<img src="http://www.eliberico.com/wp-content/uploads/2015/04/10-668x336.jpg" height="150" width="300">
+				<p id="form-text-bottom">05 Marzo</p>
+				<p id="form-text-lugar">edificio 6k 07:30hrs</p>
+			</div>
+			<div class="form-event">
+				<p id="form-text-top">Prueba 2 POO</p> 
+				<img src="http://i0.wp.com/sintaxisweb.es/wp-content/uploads/2014/11/I0127.jpg?resize=800%2C450" height="150" width="300">
+				<p id="form-text-bottom">18 Abril</p>
+				<p id="form-text-lugar">edicio 10k</p>
+			</div>
+			<div class="form-event">
+				<p id="form-text-top">#Carrete 4:20</p> 
+				<img src="https://httpstatusdogs.com/img/420.jpg" height="150" width="300">
+				<p id="form-text-bottom">20 Abril</p>
+				<p id="form-text-lugar">caf 23:50hrs</p>
+			</div>
+			<div class="form-event">
+				<p id="form-text-top">#Prueba Fisica 3</p> 
+				<img src="https://media4.giphy.com/media/UStTiq1FoOu64/200_s.gif" height="150" width="300">
+				<p id="form-text-bottom">06 Mayo</p>
+				<p id="form-text-lugar">Edicio 6k 00:00hrs</p>
+			</div>
+			<div class="form-event">
+				<p id="form-text-top">#Cumpleaños Bob y Patricio</p> 
+				<img src="http://data.whicdn.com/images/61202365/large.gif" height="150" width="300">
+				<p id="form-text-bottom">31 junio</p>
+				<p id="form-text-lugar">Crustaceo cascarudo</p>
+			</div>			
+			<div class="form-event">
+				<p id="form-text-top">#Hackaton bailable</p> 
+				<img src="http://www.masoneriaespañola.com/wp-content/uploads/2016/08/matrix.jpg" height="150" width="300">
+				<p id="form-text-bottom">05 xxx</p>
+				<p id="form-text-lugar">edicio secreto</p>
+			</div>	
+			<div class="form-event">
+				<p id="form-text-top">#Torneo LOL</p> 
+				<img src="https://signup.las.leagueoflegends.com/theme/signup_new_theme/img/logo-lol-smaller.png" height="150" width="300">
+				<p id="form-text-bottom">31 Noviembre</p>
+				<p id="form-text-lugar">edicio 10k</p>
+			</div>
+		</div>
+
+	
+	<div class="crearEventosForm all" style="display:none">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
+	<form class="contact_form" action="#" id="contact_form" runat="server">
+	<div>
+		<ul>
+			<li>
+				<h2>Nuevo Evento</h2> <span class="required_notification">* Datos requeridos</span> </li>
+			<li>
+				<label for="name">Nombre evento:</label>
+				<input type="text" required /> </li>
+			<li>
+				<label for="place">Lugar:</label>
+				<input type="text" name="lugar" required />  </li>
+			<li>
+				<label for="date">Fecha:</label>
+				<input id="date" type="date">
+			<li>
+				<label for="message">Detalles:</label>
+				<textarea name="detalles" cols="40" rows="6" required></textarea>
+			</li>
+			<li>
+				<button class="submit" type="submit">Crear Evento</button>
+			</li>
+		</ul>
+	</div>
+</form>
+		
+		
+		
+		
+		
+	</div>
+<div class="calendarioForm all" style="display:none">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="application/javascript"></script>
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
+	<div class="calendar">
+		<div class="month-year">enero de 2016</div>
+		<div class="btns">
+			<button onclick="prevMonth()">
+				<</button>
+					<button onclick="today()">Hoy</button>
+					<button onclick="nextMonth()">></button>
+		</div>
+		<table cellspacing="0" cellpadding="0"></table>
+	</div>
+	<style>
+		html {
+			font-family: 'Work Sans', sans-serif;
+		}
+		
+		.calendar {
+			height: 500px;
+			position: relative;
+		}
+		
+		.calendar .month-year {
+			text-align: left;
+			padding: 10px;
+			color: #666;
+			font-size: 25px;
+		}
+		
+		.calendar .btns {
+			top: 10px;
+			right: 10px;
+			position: absolute;
+		}
+		
+		.calendar table {
+			border-collapse: collapse;
+			border-spacing: 0;
+			width: 100%;
+		}
+		
+		.calendar table .day {
+			position: absolute;
+			font-weight: bold;
+			right: 7px;
+			top: 7px;
+			font-size: 10px;
+			color: #666;
+		}
+		
+		.calendar table .today {
+			background: red;
+			padding: 3px;
+			border-radius: 4px;
+			box-shadow: 0px 0px 2px 0px #AAA;
+			border: 1px solid #FFF;
+			color: #FFF;
+		}
+		
+		.calendar table .week td {
+			height: 20px;
+			border: none;
+			color: #444;
+			font-size: 14px;
+			padding: 5px;
+			text-align: right;
+		}
+		
+		.calendar table td {
+			position: relative;
+			width: 50px;
+			height: 60px;
+			border: solid 1px #CCC;
+		}
+	</style>
+	<script>
+		var month = year = 0;
+
+		function nextMonth() {
+			if (month == 12) {
+				month = 1;
+				year++;
+			}
+			else {
+				month++;
+			}
+			displayMonth(year, month);
+		}
+
+		function prevMonth() {
+			if (month == 1) {
+				month = 12;
+				year--;
+			}
+			else {
+				month--;
+			}
+			displayMonth(year, month);
+		}
+
+		function today() {
+			var d = new Date();
+			year = d.getFullYear();
+			month = d.getMonth() + 1;
+			displayMonth(year, month);
+		}
+		//Corre la funcion
+		today();
+
+		function displayMonth(year, month) {
+			var curDay = curMonth = curYear = 0;
+			var d = new Date();
+			curYear = d.getFullYear();
+			curMonth = d.getMonth() + 1;
+			curDay = d.getDate();
+			var months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+			//Asigna el título
+			$(".month-year").html(months[month - 1] + " del " + year);
+			//Obtiene cuando dias tiene el mes
+			var monthDays = new Date(year, month, 0).getDate();
+			//Obtiene el primer dia de la semana del mes
+			var firstWeekDay = new Date(year, month - 1, 1).getDay();
+			if (firstWeekDay == 0) {
+				firstWeekDay = 7;
+			}
+			console.log(firstWeekDay);
+			//Crea el calendario
+			var html = "<tr class='week'><td>Lun</td><td>Mar</td><td>Mie</td><td>Jue</td><td>Vie</td><td>Sab</td><td>Dom</td></tr>";
+			for (var i = 0; i <= 42; i++) {
+				var isCurDay = (curYear == year && curMonth == month && (i - firstWeekDay + 2) == curDay);
+				//El primer dia y al comienzo de cada semana
+				if (i % 7 == 0) {
+					html += '<tr>';
+				}
+				if (i != monthDays && i % 7 == 0) {
+					html += '</tr><tr>';
+				}
+				if (isCurDay) {
+					html += '<td><div class="today day">' + (i - firstWeekDay + 2) + '</div><div class="events"></div></td>';
+				}
+				if (i == 42) {
+					html += '</tr>';
+				}
+				if (i < firstWeekDay - 1) {
+					html += '<td></td>';
+				}
+				if (i >= firstWeekDay - 1 && i < monthDays + firstWeekDay - 1 && !isCurDay) {
+					html += '<td><div class="day">' + (i - firstWeekDay + 2) + '</div><div class="events"></div></td>';
+				}
+				if (i >= monthDays + firstWeekDay - 1 && i != 42) {
+					html += '<td></td>';
+				}
+			}
+			//Imprime el calendario
+			$(".calendar table").html(html);
+		}
+	</script>
+</div>
+</div>
+
+<script>
+	
+	
+	$(".seccion-events .tusEventos").click(function(){
+		$(" .all").hide();
+		$(".seccion-events .container-events").show();	
+		$(".seccion-events div").removeClass("seleccionado");	
+		$(this).addClass("seleccionado");
+	});
+	$(".seccion-events .crearEventos").click(function(){
+		$(".all").hide();
+		$(".seccion-events .crearEventosForm").show();
+		$(".seccion-events div").removeClass("seleccionado");	
+		$(this).addClass("seleccionado");
+	});
+	$(".seccion-events .calendario").click(function(){
+		$(".all").hide();
+		$(".seccion-events .calendarioForm").show();
+		$(".seccion-events div").removeClass("seleccionado");	
+		$(this).addClass("seleccionado");
+	});
+	
+	
+</script>

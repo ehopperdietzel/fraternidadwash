@@ -1,0 +1,57 @@
+<div id="initTutorial" class="modal">
+  <div class="title">¡Bienvenido!</div>
+  <img src="/*.png" onload="this.src=IMG_LOGO">
+  <div class="msg">
+    Bienvenido a Fraternidad Wash, la red social exclusiva de la Universidad Austral
+    de Chile. Podrás comunicarte, hacer preguntas, acceder a documentos, formar grupos,
+    enterarte de los acontecimientos importantes de la Universidad entre muchas cosas más.<br><br><br>
+    <center>Presiona "Continuar" para completar tu registro.</center>
+  </div>
+  <div class="button btn" onclick="loadModal('completeRegister')">Continuar</div>
+</div>
+
+<style>
+#initTutorial{
+  margin:0 auto;
+  position: relative;
+  margin-top:10vh;
+  background:#FFF;
+  padding:10px;
+  padding-top: 20px;
+  border-radius: 10px;
+  width:550px;
+}
+#initTutorial img{
+  width:200px;
+  left:calc(50% - 100px);
+  position:relative;
+  margin-bottom:10px;
+}
+#initTutorial .title{
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color:#555;
+  margin-bottom:20px;
+}
+#initTutorial .msg{
+  margin:0 auto;
+  width:400px;
+  margin-top:15px;
+  text-align: justify;
+  font-size: 13px;
+  color:#666;
+}
+#initTutorial .button{
+  margin:0 auto;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  text-align: center;
+  padding:8px;
+  border-radius: 5px;
+  font-size: 13px;
+  color:#FFF;
+  width:350px;
+  background:#3fa9f5;
+}
+</style>

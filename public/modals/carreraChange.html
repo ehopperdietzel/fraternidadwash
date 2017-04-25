@@ -1,0 +1,215 @@
+<div id="carreraChange" class="modal">
+  <div class="contenido">
+    <div class="header A">
+      <span class="close" onclick="cerrar()">&times;</span>
+      <h3>Cambiar Carrera</h3>
+    </div>
+    <hr>
+    <div class="cuerpo A">
+      <h5>Nueva Carrera</h5>
+      <p><div class="select"><select class="career"><option val="" disabled selected>Carrera</option></select></div></p>
+    </div>
+    <hr>
+    <div class="footer A">
+       <div class="Cancel">
+          <button type="button" onclick="cerrar()">Cancelar</button> 
+       </div>
+       <div class="espacio"></div>
+       <div class="Modif">
+          <button type="button" onclick="nueva_carrera()">Modificar</button>
+       </div>  
+    </div>
+  </div>
+</div>
+
+<style>
+
+/* Contenido del modal */
+.contenido {
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Animacion de entrada */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* Boton de Cerrado */
+.close {
+    color: #E6E6E6;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    /*color: #000;*/
+    opacity: 0.7;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Cabecera del modal */
+.header {
+    padding: 2px 16px;
+    margin-bottom: 2px;
+    border-radius: 15px 15px 0px 0px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #3fa9f5;
+}
+
+/*Cuerpo del modal*/
+.cuerpo {
+  padding: 2px 16px;
+  margin-top: 5px;
+}
+
+.cuerpo .select{
+	width: 90%;
+}
+
+.cuerpo option{
+  width: 90%;
+}
+
+.cuerpo h5{
+  -webkit-margin-before: 0.6em;
+  -webkit-margin-after: 0.6em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #3fa9f5;
+}
+
+/* Pie de pagina del modal*/
+.footer {
+    padding: 2px 16px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    border-radius: 0px 0px 15px 15px;
+    height: 20px;
+    /*background-color: #5cb85c;*/
+    color: black;
+}
+
+.footer button{
+  float: right;
+  border-radius: 8px;
+}
+
+.footer .Modif button{
+  background-color: #3fa9f5;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.footer .Modif button:hover{
+  opacity: 0.7;
+}
+
+.footer .Cancel button{
+  background-color: white;
+  border: 1px solid #E6E6E6;
+  color: black;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.footer .Cancel button:hover{
+  opacity: 0.7;
+}
+
+.footer .espacio{
+    float: right;
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #fafafa;
+    border-left: 1px solid #b4b4b4;
+    padding: 0;
+    visibility: hidden;
+}
+
+/* Los demas css */
+
+.A{
+  background:#FFF;
+}
+
+.B{
+  background:#FAFAFA;
+}
+
+hr{
+  border-top: 1px solid #8c8b8b;
+  border-bottom: 1px solid #fff;
+  background-color: #FAFAFA;
+  width: 96%;
+  opacity: 0.4;
+}
+
+</style>
+
+<script type="text/javascript">
+
+function cerrar() {
+	modal.hide();
+}
+
+$(document).ready(function(){
+    var cont = $("#carreraChange");
+    var _career = cont.find(".career");
+    var html = "<option value='' disabled selected>Carreras</option>";
+    for(var carrera in user.carreras[user.city]){
+      if(carrera == user.career){
+          html += '<option value="'+carrera+'" selected="selected">'+user.carreras[user.city][carrera]+'</option>';
+      }else{
+          html += '<option value="'+carrera+'">'+user.carreras[user.city][carrera]+'</option>';
+      }
+    }
+    _career.html(html);
+ 
+});
+
+function nueva_carrera() {
+  /*
+  post({career:modal.find('.career').val()},'/updateUser',function(res) {
+      user.career=modal.find('.career').val();
+      $('#ncareer').html(user.carreras[user.city][user.career]);
+  });
+  */
+  send("careerChange",{career:modal.find('.career').val()});
+  $('#ncareer').html(user.carreras[user.city][modal.find('.career').val()]);
+  modal.hide();
+}
+
+</script>

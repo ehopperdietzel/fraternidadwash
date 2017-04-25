@@ -1,0 +1,243 @@
+/* Preguntas */
+
+/* Sección superior */
+#questionsWindow{
+
+}
+
+#questionsWindow .pts{
+  vertical-align: middle;
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  color:var(--naranjo);
+}
+#questionsWindow .pts .puntaje{
+  font-size: 21px;
+}
+#questionsWindow .pts .nombre{
+  font-size: 14px;
+}
+#questionsWindow .input{
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+  width:calc(100% - 300px);
+}
+
+
+#questionsWindow ::-moz-placeholder {  /* Firefox 19+ */
+   color: #848484;
+}
+
+#questionsWindow .input input{
+  border-radius: 5px;
+  border: solid 1px #ccc;
+  padding: 5px;
+  padding-left: 25px;
+  width: calc(100% - 40px);
+}
+
+#questionsWindow .input img{
+  position: absolute;
+  z-index: 90;
+  height: 15px;
+  top: 7px;
+  left: 5px;
+}
+
+
+#questionsWindow .boton{
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: var(--naranjo);
+  color: white;
+}
+#questionsWindow .boton2{
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #3fa9f5;
+  color: white;
+  position: absolute;
+}
+
+
+
+/* Fin de botones de preguntas */
+/*FIN SECCIÓN SUPERIOR */
+
+/* Sección inferior */
+/* Preguntas recientes */
+
+/*Container del titulo */
+.titleContRec {
+  color: white;
+  margin-top: 10px;
+}
+
+/*Container de preguntas recientes */
+.RecCont{
+  width: calc(100% - 10px);
+  max-height: 200px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: white;
+  padding-bottom: 1px;
+  padding-top: 5px;
+}
+.RecCont .message{
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+
+  justify-content: center;
+  height: 30px;
+  margin-top: 10px;
+  color: #8c8c8c;
+}
+
+.RecCont table{
+  width: 100%;
+  font-size: 14px;
+}
+.RecCont td{
+  padding: 5px;
+  color: #8c8c8c;
+}
+.RecCont .time{
+  color: #8c8c8c;
+}
+.RecCont .user{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--celeste);
+  max-width: 80px;
+}
+.RecCont .user:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.RecCont .pregunta{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #8c8c8c;
+  max-width: 200px;
+}
+.RecCont .responder{
+  cursor: pointer;
+  color: var(--celeste);
+  padding-right: 20px;
+}
+
+.RecCont .responder:hover{
+  text-decoration: underline;
+}
+
+
+.RecCont .verMas1{
+  text-align: center;
+  width: calc(100% - 20px);
+  color: #8c8c8c;
+  margin: 10px;
+  position: relative;
+  font-size: 13px;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 5px;
+}
+
+.RecCont .verMas1:hover{
+  background-color: #a5d0ff;
+  cursor: pointer;
+  border-radius: 30px;
+  border-top: 1px solid #a5d0ff;
+  color: white;
+}
+
+
+/* Container de preguntas populares */
+.titleContPopu{
+  color: white;
+  margin-top: 10px;
+}
+
+.PopuCont{
+  width: calc(100% - 10px);
+  max-height: 200px;
+  margin-top: 3px;
+  border-radius: 5px;
+  background-color: white;
+  padding-bottom: 1px;
+  padding-top: 5px;
+  overflow: hidden;
+}
+
+
+.PopuCont table{
+  width: 100%;
+  font-size: 14px;
+
+}
+.PopuCont td{
+  padding: 5px;
+}
+.PopuCont .comments{
+  color: var(--verde);
+}
+.PopuCont .points{
+  color: var(--naranjo);
+}
+.PopuCont .user{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+  color: var(--celeste);
+}
+.PopuCont .user:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.PopuCont .pregunta{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  color: #8c8c8c;
+}
+.PopuCont .responder{
+  color: var(--celeste);
+}
+.PopuCont .responder:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.PopuCont .verMas1{
+  text-align: center;
+  width: calc(100% - 20px);
+  color: #8c8c8c;
+  margin: 10px;
+  position: relative;
+  font-size: 13px;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 5px;
+}
+
+.PopuCont .verMas1:hover{
+  background-color: #a5d0ff;
+  cursor: pointer;
+  border-radius: 30px;
+  border-top: 1px solid #a5d0ff;
+  color: white;
+}

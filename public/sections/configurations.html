@@ -1,0 +1,466 @@
+<!--
+
+  Todo el código de esta sección debe ir dentro del div.
+  Para añadir CSS edita el archivo ubicado en /css/configurations.css
+
+-->
+
+<div class="backPart"></div>
+
+<div class="whiteWindow"></div>
+
+<!--Titulo
+<div class="whiteWindow usersWindow">
+  <div class="postWindow">
+    <div class="top">
+      <center>
+        <div class="title">
+          <img src="http://i.imgur.com/Xkrczt6.png">
+          <img src="http://i.imgur.com/7Yilhti.png">
+        </div>
+      </center>
+    </div>
+  </div>
+</div>-->
+
+<!--Contenedor principal-->
+<div class="conf">
+  <!--Ventana del Menu-->
+  <div class="confList">
+    <div class="titulo">Categorias</div>
+    <div class="list whiteW">
+      <div class="tabla A" id="datos">
+          <img src="http://i.imgur.com/AO8XPxg.jpg">
+          <a href="#">Datos Personales</a>
+      </div>
+      <div class="tabla B" id="privacidad">
+          <img src="http://i.imgur.com/FSh9feN.png">
+          <a href="#">Privacidad</a>
+      </div>
+      <div class="tabla A" id="bloqueos">
+          <img src="http://i.imgur.com/NsduGK4.png">
+          <a href="#">Bloqueos</a>
+      </div>
+      <div class="tabla B" id="notificaciones">
+          <img src="http://i.imgur.com/seP4HMD.png">
+          <a href="#">Notificaciones</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Datos Personales-->
+  <div class="confListDos oculto">
+    <div class="titulo">Datos Personales</div>
+    <div class="list whiteW">
+      <div class="tabla A">
+          <table>
+            <tr>
+                <td>Nombre:</td>
+                <td id="nname"></td>
+                <td><a href="#" onclick="modal_nombre()">Editar</a></td>
+            </tr>
+          </table>
+      </div>
+      <div class="tabla B">
+          <table>
+            <tr>
+                <td>Contraseña:</td>
+                <td id="npass"></td>
+                <td><a href="#" onclick="modal_cont()">Editar</a></td>
+            </tr>
+          </table>
+      </div>
+      <div class="tabla A">
+          <table>
+            <tr>
+                <td>Ciudad:</td>
+                <td id="ncity"></td>
+                <td><a href="#" onclick="modal_ciudad()">Editar</a></td>
+            </tr>
+          </table>
+      </div>
+      <div class="tabla B">
+          <table>
+            <tr>
+                <td>Carrera:</td>
+                <td id="ncareer"></td>
+                <td><a href="#" onclick="modal_carrera()">Editar</a></td>
+            </tr>
+          </table>
+      </div>
+      <div class="tabla A">
+          <table>
+            <tr>
+                <td>Año de Ingreso:</td>
+                <td id="nyear"></td>
+                <td><a href="#" onclick="modal_ingreso()">Editar</a></td>
+            </tr>
+          </table>
+      </div>
+      <div class="tabla B">
+          <table>
+            <tr>
+                <td>Fecha de Nacimiento:</td>
+                <td id="ndate"></td>
+                <td><a href="#" onclick="modal_fecha()">Editar</a></td>
+            </tr>
+          </table>
+      </div>
+    </div>
+  </div>
+
+  <!--Privacidad-->
+  <div class="confListTres oculto">
+    <div class="titulo">Privacidad</div>
+    <div class="list whiteW">
+      <div class="tabla A">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Etiquetado de Fotos:</td>
+                  <td>
+                    <div id="etiquetar">
+                      <input id="etiquetaruno" type="radio" name="etiquetado" value="sietiquetado"> Permitir que se me etiquete en Fotos
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div id="noetiquetar">
+                      <input id="noetiquetaruno" type="radio" name="noetiquetado" value="noetiquetado"> No Permitir que se me etiquete en Fotos       
+                    </div>        
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla B" id="np">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Reestablecimiento de Contraseña:</td>
+                  <td>
+                        Si escoge esta casilla se pedira el correo electrónico terminado en @alumnos.uach.cl
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div id="reccont">
+                        <input id="reccontuno" type="checkbox" name="password" value="password"> Enviar Información para reestablecer Contraseña
+                    </div>
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla A" id="nvis">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Visibilidad:</td>
+                  <td>
+                    <div id="allownombre">
+                      <input id="allownombreuno" type="checkbox" name="nombre" value="nombre"> Permitir que me encuentren por nombre
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div id="allowcarrera">
+                      <input id="allowcarrerauno" type="checkbox" name="carrera" value="carrera"> Permitir que me encuentren por carrera 
+                    </div>     
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla B">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="3">Mostrar Información:</td>
+                  <td>
+                    <div id="showfotos">
+                      <input id="showfotosuno" type="checkbox" name="fotos" value="fotos"> <b>Mostrar Fotos a los Fraternos</b>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div id="showdocumentos">
+                      <input id="showdocumentosuno" type="checkbox" name="docs" value="docs"> Mostrar Documentos a los Fraternos   
+                    </div>  
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div id="showpub">
+                      <input id="showpubuno" type="checkbox" name="pubs" value="pubs"> Mostrar Publicaciones a los Fraternos 
+                    </div>
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla A" id="nmsc">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Mostrar Información Miscelánea:</td>
+                  <td>
+                    <div id="showpreg">
+                      <input id="showpreguno" type="checkbox" name="preguntas" value="preguntas"> Mostrar Preguntas a los Fraternos
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div id="showan">
+                      <input id="showanuno" type="checkbox" name="anuncios" value="anuncios"> Mostrar Anuncios a los Fraternos     
+                    </div>
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--Bloqueos-->
+  <div class="confListCuatro oculto">
+    <div class="titulo">Bloqueos</div>
+    <div class="list whiteW">
+      <div class="tabla A" id="general">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Bloquear Fraterno:</td>
+                  <td colspan="3">
+                      Una vez que bloqueas a alguien, esa persona ya no podrá ver lo que publiques en tu perfil o publicaciones, etiquetarte, invitarte a eventos o, iniciar una conversación contigo.<a href="#" onclick="list_lock()">Ver Fraternos Bloqueados</a>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Bloquear Fraterno</td>
+                  <td>
+                    <div class="usblock">
+                      <input class="usrblock" type="text" name="fetiquetar" placeholder="Nombre del Fraterno">
+                      <div id="listalock"></div>
+                    </div>
+                  </td>
+                  <!--<td><input class="ffraterno" type="text" name="ffraterno" placeholder="Nombre del Fraterno"><br></td>-->
+                  <!--<td>       
+                    <div class="lock">
+                        <button type="button" onclick="block_fraterno()">Bloquear</button>
+                    </div>
+                  </td> -->
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla B" id="bmsg">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Bloquear Mensajes:</td>
+                  <td colspan="3">
+                      Se bloquean mensajes de chat de esa persona, pero aún pueden publicar en tu perfil o etiquetarte a menos que tu decidas lo contrario.<a href="#" onclick="list_message()">Ver Fraternos Bloqueados</a>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Bloquear Mensajes de</td>
+                  <td><input class="fmensajes" type="text" name="fmensajes" placeholder="Nombre del Fraterno"><br><br>
+                  <input class="lmensajes" type="text" name="lmensajes" placeholder="Apellido del Fraterno"><br></td>
+                  <td>       
+                    <div class="lock">
+                        <button type="button" onclick="block_msg()">Bloquear</button>
+                    </div>
+                  </td> 
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla A" id="labels">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Bloquear Etiquetado:</td>
+                  <td colspan="3">
+                      Se bloquean el etiquetado personalizado de un fraterno en particular, pero éste podrá continuar realizando otros procesos como el chat, entre otros.<a href="#" onclick="list_label()">Ver Fraternos Bloqueados</a>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Bloquear Etiquetado de</td>
+                  <td><input class="fetiquetar" type="text" name="fetiquetar" placeholder="Nombre del Fraterno"><br><br>
+                  <input class="letiquetar" type="text" name="letiquetar" placeholder="Apellido del Fraterno"><br></td>
+                  <td>       
+                    <div class="lock">
+                        <button type="button" onclick="block_label()">Bloquear</button>
+                    </div>
+                  </td>  
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla B" id="invs">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Bloquear Invitaciones a Eventos:</td>
+                  <td colspan="3">
+                      Al bloquear la invitación de alguien para asistir a un evento se ignorarán automáticamente todas las invitaciones a eventos de ese fraterno.<a href="#" onclick="list_invitation()">Ver Fraternos Bloqueados</a>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Bloquear Invitaciones de</td>
+                  <td><input class="finvitacion" type="text" name="finvitacion" placeholder="Nombre del Fraterno"><br><br>
+                  <input class="linvitacion" type="text" name="linvitacion" placeholder="Apellido del Fraterno"><br></td>
+                  <td>       
+                    <div class="lock">
+                        <button type="button" onclick="block_invitacion()">Bloquear</button>
+                    </div>
+                  </td> 
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla A" id="bpub">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Bloquear Publicaciones:</td>
+                  <td colspan="3">
+                      Al bloquear la publicación de alguien para asistir a un evento se ignorarán automáticamente todas las publicaciones de ese fraterno. <a href="#" onclick="list_publications()">Ver Fraternos Bloqueados</a>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Bloquear Publicaciones de</td>
+                  <td><input class="fpublicacion" type="text" name="fpublicacion" placeholder="Nombre del Fraterno"><br><br>
+                  <input class="lpublicacion" type="text" name="lpublicacion" placeholder="Apellido del Fraterno"><br></td>
+                  <td>       
+                    <div class="lock">
+                        <button type="button" onclick="block_pub()">Bloquear</button>
+                    </div>
+                  </td> 
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla B" id="bpreg">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">Bloquear Preguntas:</td>
+                  <td colspan="3">
+                      Al bloquear las preguntas de una persona, el ya mencionado fraterno no podrá seguirte para poder preguntarte nada.<a href="#" onclick="list_questions()">Ver Fraternos Bloqueados</a>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Bloquear Preguntas de</td>
+                  <td><input class="fpregunta" type="text" name="fpregunta" placeholder="Nombre del Fraterno"><br><br>
+                  <input class="lpregunta" type="text" name="lpregunta" placeholder="Apellido del Fraterno"><br></td>
+                  <td>       
+                    <div class="lock">
+                        <button type="button" onclick="block_preg()">Bloquear</button>
+                    </div>
+                  </td> 
+              </tr>
+            </table>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--Notificaciones-->
+  <div class="confListCinco oculto">
+    <div class="titulo">Notificaciones</div>
+    <div class="list whiteW">
+      <div class="tabla A">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">
+                      <img src="http://i.imgur.com/36ehajp.jpg">
+                      Sonidos en FraternidadWash:
+                    </td>
+                  <td>
+                      <img src="http://i.imgur.com/CzKGrEP.png">
+                      <input id="soundpubuno" type="checkbox" name="soundpub" value="soundpub"> Reproducir un sonido al recibir una publicación
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <img src="http://i.imgur.com/1fBkuWl.png">                  
+                      <input id="soundmsguno" type="checkbox" name="soundmsg" value="soundmsg"> Reproducir un sonido al recibir un mensaje   
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla B">
+        <form action="">
+            <table>
+              <tr>
+                  <td rowspan="2">
+                      <img src="http://i.imgur.com/4Sgy53M.png">
+                      Uso de Correo Electrónico:
+                    </td>
+                  <td id="not">
+                      Se envian notificaciones directamente a tu correo electrónico ya sean sobre publicaciones en que te etiquetaron entre otras directamente al correo.
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <input id="notcorreouno" type="checkbox" name="anuncios" value="anuncios"> Envío de notificaciones directa al correo Electrónico
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla A">
+        <form action="">
+            <table>
+              <tr>
+                  <td>
+                      <img src="http://i.imgur.com/hI5WKq5.png">
+                      Etiquetado:
+                  </td>
+                  <td>                 
+                      <input id="notlabeluno" type="checkbox" name="anuncios" value="anuncios"> Recibirás una notificación al ser etiquetado
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla B" id="not">
+        <form action="">
+            <table>
+              <tr>
+                  <td>
+                      <img src="http://i.imgur.com/Jwo4Xb6.png">
+                      Eventos:
+                  </td>
+                  <td>                 
+                      <input id="noteventuno" type="checkbox" name="anuncios" value="anuncios"> Recibirás una notificación al ser invitado a un evento
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+      <div class="tabla A">
+        <form action="">
+            <table>
+              <tr>
+                  <td>
+                      <img src="http://i.imgur.com/3VSsoKZ.png">
+                      Preguntas:
+                  </td>
+                  <td>                 
+                      <input id="notansweruno" type="checkbox" name="anuncios" value="anuncios"> Recibirás una notificación al ser respondida una de tus preguntas
+                  </td>
+              </tr>
+            </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

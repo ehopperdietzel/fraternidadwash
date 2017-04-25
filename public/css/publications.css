@@ -1,0 +1,72 @@
+:root {
+  --azul:#0071bc;
+  --celeste: #3fa9f5;
+  --verde:#7ac943;
+  --rojo:#ff1d25;
+  --naranjo:#ff931e;
+  --gris:#bdccd4;
+  --rosado:#ff7bac;
+}
+.publicationsWindow{
+  z-index: 9;
+  position:relative;
+  padding: 0px;
+  width: calc(100% - 10px);
+  padding-top: 0px;
+}
+.publicationsWindow .postWindow{
+  margin-top: 0;
+  margin-left: 0;
+  width:calc(100% - 20px);
+  padding:10px;
+  margin-bottom: 10px;
+}
+
+.publicationsWindow .postWindow .title{
+  color:var(--celeste);
+  font-size: 11px;
+}
+
+.publicationsWindow .postWindow .bottom{
+  display: flex;
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  flex-wrap: no-wrap;
+  width:100%;
+}
+
+.publicationsWindow .postWindow .bottom .selector{
+  display: flex;
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  flex-wrap: no-wrap;
+  width:100%;
+  border:solid 2px #7ac943;
+  border-radius: 6px;
+  margin-right:10px;
+  color:#7ac943;
+  font-size:13px;
+}
+.publicationsWindow .postWindow .bottom  .post{
+  width:150px;
+  text-align: center;
+  padding:4px;
+  font-size:13px;
+  line-height: 20px;
+}
+.publicationsWindow .postWindow .bottom  .selector div{
+  width:100%;
+  text-align: center;
+  padding:4px;
+  cursor: pointer;
+}
+.publicationsWindow .postWindow .bottom  .selected{
+  background: #7ac943;
+  color:#FFF;
+}
+.publicationsWindow .publications{
+  position:relative;
+  width:100%;
+  margin-top: 0;
+  top:0;
+}

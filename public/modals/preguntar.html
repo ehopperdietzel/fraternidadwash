@@ -1,0 +1,169 @@
+<div id="modalPregunta" class="modal">
+  <div class="containerPrincipal">
+    <img src="e" onerror="this.src=IMG_CLOSE" class="closeBtn clos btn">
+    <div class="form">
+      <div class="titulo">Titulo..</div>
+      <input class="inputQuestion" type="pregunta" placeholder="¿Cuál es tu pregunta?" style="width: 95%;border-radius: 6px;
+      border: solid 1px #ccc;
+      margin-top:5px; padding: 7px; text-align: center;">
+      <div class="describe">Descripción..</div>
+      <textarea class="descriptionInput" name="name" placeholder="Describe tu pregunta..." style="width: 95%;border-radius: 6px;
+      border: solid 1px #ccc;
+      margin-top:5px; padding: 7px; resize: none; height: 100px; text-align: center;"></textarea>
+      <div class="optionsContainer1">
+        <div class="elemento1">Filtra por Area</div>
+        <div class="elemento2">
+          <div class="select" style="width:100px">
+            <select class="general selectInput">
+              <option value="1">Todas</option>
+              <option value="2">Salud</option>
+              <option value="3">Cs. Básicas</option>
+              <option value="4">Biología</option>
+              <option value="5">Deporte</option>
+              <option value="6">Historia</option>
+              <option value="7">Arte</option>
+              <option value="8">Musica</option>
+              <option value="9">Tecnología</option>
+              <option value="10">Social</option>
+              <option value="11">Otra</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="optionsContainer2">
+        <div class="elemento1">ó filtra por carrera</div>
+        <div class=""><input type="text" placeholder="Odontología..."></div>
+      </div>
+      </div>
+      <div class="multimedia">¿Quieres añadir multimedia?</div>
+      <div class="imagenes">
+        <img src="r" onerror="this.src=IMG_PHOTO" class="photoBtn btn">
+        <img src="t" onerror="this.src=IMG_ATTACH" class="photoAtt btn">
+      </div>
+      <div class="preguntarBtn btn">Preguntar</div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  #modalPregunta .form{
+    width: 470px;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+
+  #modalPregunta .closeBtn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 15px;
+  }
+
+  #modalPregunta .containerPrincipal{
+    width: 500px;
+    height: 440px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 5vh;
+    position: relative;
+  }
+  #modalPregunta .titulo{
+    padding-top: 15px;
+    color: #605f5f;
+  }
+
+  #modalPregunta ::-moz-placeholder {  /* Firefox 19+ */
+     color: #3d3d3d;
+  }
+  #modalPregunta .describe{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #605f5f;
+  }
+  #modalPregunta .area{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #605f5f;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+
+  #modalPregunta .optionsContainer1{
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    color: #605f5f;
+  }
+  #modalPregunta .optionsContainer2{
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 10px;
+    color: #605f5f;
+  }
+
+
+  #modalPregunta .multimedia{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #605f5f;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #modalPregunta .imagenes{
+    text-align: center;
+    width: 100%;
+  }
+  #modalPregunta .photoBtn{
+    height: 28px;
+    margin-right: 15px;
+  }
+  #modalPregunta .photoAtt{
+    height: 28px;
+  }
+  #modalPregunta .preguntarBtn{
+    background-color: var(--naranjo);
+    border-radius: 5px;
+    text-align: center;
+    width: 95%;
+    padding: 4px;
+    margin:0 auto;
+    color: white;
+    margin-top: 22px;
+  }
+
+</style>
+
+<script>
+
+  modal.find(".clos").click(function(){
+    modal.empty().fadeOut(200);
+  });
+
+  $("#tags").keypress(function(e){
+    if(e.which==13){
+      var tag = $(this).val();
+      var html = '<div class="tag"><span>#'+tag+'</span><img src="/*.png" class="btn" onload="this.src=IMG_CLOSE"></div>';
+      var cont = $(".tagContainer");
+      cont.append(html);
+      $(this).val("");
+      cont.find("img").click(function(){
+        $(this).parent().remove();
+      });
+    }
+  });
+
+  modal.find(".preguntarBtn").click(function(){
+    send("newQuestion", {title: modal.find(".inputQuestion").val(), description: modal.find(".descriptionInput").val(), input: modal.find(".selectInput").val(), career:"1", photos:[], links:[]});
+  });
+</script>

@@ -1,0 +1,35 @@
+<div class="postWindow modal alert">
+  <div class="top">
+    <div class="title">Estas subiendo demasiadas fotos, espera unos minutos para subir más.</div>
+    <img style="margin-top:30px" src="/*.png" onload="this.src=IMG_COMPUTER">
+    <img class="close btn clos" src="/*.png" onload="this.src=IMG_CLOSE">
+  </div><br>
+  <center>
+    <div class="btn post sve">Entendido</div>
+  </center>
+</div>
+
+<style>
+.modal.alert{
+  padding-bottom: 35px;
+}
+.modal.alert .top{
+  text-align: center;
+}
+.modal.alert .title{
+  position:relative;
+  margin:0 auto;
+}
+.modal.alert .post{
+  position: relative;
+}
+.modal.alert .sve{
+  background:#3fa9f5;
+}
+</style>
+
+<script>
+  modal.find(".sve").click(function(){
+    modal.fadeOut(200);
+  });
+</script>

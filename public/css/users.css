@@ -1,0 +1,162 @@
+/* Usuarios */
+
+:root {
+  --azul:#0071bc;
+  --celeste: #3fa9f5;
+  --verde:#7ac943;
+  --rojo:#ff1d25;
+  --naranjo:#ff931e;
+  --gris:#bdccd4;
+  --rosado:#ff7bac;
+}
+.usersWindow{
+  z-index: 9;
+  position:relative;
+  padding: 0px;
+  width: calc(100% - 10px);
+  padding-top: 0px;
+}
+.usersWindow .postWindow{
+  margin-top: 0;
+  margin-left: 0;
+  width:calc(100% - 20px);
+  padding:10px;
+}
+.usersWindow .bottom input{
+  padding:7px;
+  padding-left:30px;
+  width:calc(100% - 140px);
+  border:solid 1px #CCC;
+  border-radius:7px;
+  outline:none;
+  font-size: 14px;
+  display:inline-block;
+  vertical-align:middle;
+  position: relative;
+  background:none;
+}
+.usersWindow .btn{
+  top:2px;
+  position: relative;
+  vertical-align:middle;
+  display:inline-block;
+  padding:8px;
+  color:#FFF;
+  background:var(--celeste);
+  font-size: 14px;
+  border-radius:7px;
+  width: 75px;
+  text-align: center;
+  float:right;
+}
+.usersWindow .bottom img{
+  position:absolute;
+  bottom:19px;
+  left:18px;
+  height:17px;
+}
+.usersList .userCard{
+  height:200px;
+  width:150px;
+  background:#FFF;
+  border-radius:5px;
+  box-shadow: 0px 0px 3px 0px #AAA;
+  padding:7px;
+  margin-top:15px;
+}
+
+.usersList .userCard img{
+  width:150px;
+  height:150px;
+  border-radius: 2px;
+}
+.usersList .userCard .view{
+  color:#FFF;
+  font-size:11px;
+  padding:3px;
+  background:var(--celeste);
+  border-radius: 5px;
+  text-align: center;
+}
+.whiteW.bar{
+  width:calc(100% - 25px);
+  padding:7px;
+  display:none;
+}
+.whiteW.bar .back{
+  font-size: 14px;
+  color:var(--celeste);
+  display:inline-block;
+  float:left;
+  padding:6px;
+  padding-left:5px;
+}
+.whiteW.bar .title{
+  padding:6px;
+  font-size: 14px;
+  color:#444;
+  display:inline-block;
+  float:left;
+}
+.whiteW.bar .select{
+  float:right;
+}
+.usersList .userCard .name{
+  max-width:136px;
+  text-align: center;
+  color:#444;
+  font-size: 13px;
+  margin:7px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.usersList{
+  display:none;
+  width:calc(100% - 10px);
+
+  flex-direction: row;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.usersWindow .postWindow .title{
+  color:var(--celeste);
+  font-size: 11px;
+}
+
+.whiteW{
+  background:#FFF;
+  width:calc(100% - 10px);
+  border-radius: 6px;
+  box-shadow: 0px 0px 3px 0px #AAA;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.careersList .city{
+  font-size:13px;
+  font-weight:bold;
+  color:#FFF;
+  margin:10px;
+}
+.careersList .career{
+  width:100%;
+  font-size:11px;
+  color:var(--celeste);
+  padding:9px;
+}
+.careersList .A{
+  background:#FFF;
+}
+.careersList .B{
+  background:#FAFAFA;
+}
+.invisibleUser{
+  width:150px;
+  padding:7px;
+  display: inline-block;
+}
+.userProfile{
+  display:none;
+}

@@ -1,0 +1,276 @@
+<div id="dateChange" class="modal">
+  <div class="contenido">
+    <div class="header A">
+      <span class="close" onclick="cerrar()">&times;</span>
+      <h3>Cambiar Fecha de Nacimiento</h3>
+    </div>
+    <hr>
+    <div class="cuerpo A">
+      <h5>Nueva Fecha</h5>
+      <div class="date">
+        <div class="select"><select class="day"></select></div>
+        <div class="select"><select class="month"></select></div>
+        <div class="select"><select class="year"></select></div>
+      </div>
+    </div>
+    <hr>
+    <div class="footer A">
+       <div class="Cancel">
+          <button type="button" onclick="cerrar()">Cancelar</button> 
+       </div>
+       <div class="espacio"></div>
+       <div class="Modif">
+          <button type="button" onclick="nuevo_nacimiento()">Modificar</button>
+       </div>  
+    </div>
+  </div>
+</div>
+
+<style>
+
+/* Contenido del modal */
+.contenido {
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Animacion de entrada */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* Boton de Cerrado */
+.close {
+    color: #E6E6E6;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    /*color: #000;*/
+    opacity: 0.7;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Cabecera del modal */
+.header {
+    padding: 2px 16px;
+    margin-bottom: 2px;
+    border-radius: 15px 15px 0px 0px;
+    /*background-color: var(--gris);*/
+    font-weight: bold;
+    font-size: 16px;
+    color: #3fa9f5;
+}
+
+/*Cuerpo del modal*/
+.cuerpo {
+  padding: 2px 16px;
+  margin-top: 5px;
+}
+
+.cuerpo h5{
+  -webkit-margin-before: 0.6em;
+  -webkit-margin-after: 0.6em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #3fa9f5;
+}
+
+/* Pie de pagina del modal*/
+.footer {
+    padding: 2px 16px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    border-radius: 0px 0px 15px 15px;
+    height: 20px;
+    /*background-color: #5cb85c;*/
+    color: black;
+}
+
+.footer button{
+  float: right;
+  border-radius: 8px;
+}
+
+.footer .Modif button{
+  background-color: #3fa9f5;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.footer .Modif button:hover{
+  opacity: 0.7;
+}
+
+.footer .Cancel button{
+  background-color: white;
+  border: 1px solid #E6E6E6;
+  color: black;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.footer .Cancel button:hover{
+  opacity: 0.7;
+}
+
+.footer .espacio{
+    float: right;
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #fafafa;
+    border-left: 1px solid #b4b4b4;
+    padding: 0;
+    visibility: hidden;
+}
+
+/* Los demas css */
+
+.A{
+  background:#FFF;
+}
+
+.B{
+  background:#FAFAFA;
+}
+
+hr{
+  border-top: 1px solid #8c8b8b;
+  border-bottom: 1px solid #fff;
+  background-color: #FAFAFA;
+  width: 96%;
+  opacity: 0.4;
+}
+
+</style>
+
+<script type="text/javascript">
+
+function cerrar() {
+	modal.hide();
+}
+
+$(document).ready(function(){
+    var d = new Date();
+    var n = d.getFullYear();
+    var cont = $("#dateChange");
+    var _day    = cont.find(".day");
+    var _month  = cont.find(".month");
+    var _year   = cont.find(".year");
+    var html = "<option value='' disabled selected>Dia</option>";
+    for(var i = 1;i<=31;i++){
+      if (i == user.birthdate.split('-')[2].substring(0,2)) {
+        html += '<option value="'+i+'" selected="selected">'+i+'</option>';
+      }else{
+        html += '<option value="'+i+'">'+i+'</option>';
+      }
+    }
+    _day.html(html);
+    html = "<option value='' disabled selected>Mes</option>";
+    for(var i = 1;i<=12;i++){
+      if (i == user.birthdate.split('-')[1]) {
+        html += '<option value="'+i+'" selected="selected">'+i+'</option>';
+      }else{
+        html += '<option value="'+i+'">'+i+'</option>';
+      }
+    }
+    _month.html(html);
+    html = "<option value='' disabled selected>Año</option>";
+    for(var i = n-18;i>1920-18;i--){
+      if (i == user.birthdate.split('-')[0]) {
+        html += '<option value="'+i+'" selected="selected">'+i+'</option>';
+      }else{
+        html += '<option value="'+i+'">'+i+'</option>';
+      }
+    }
+    _year.html(html);
+});
+
+function nuevo_nacimiento() {
+  if(modal.find('.day').val() < 10){
+    /*
+      post({birthdate:modal.find('.year').val()+'-'+'0'+modal.find('.month').val()+'-'+'0'+modal.find('.day').val()},'/updateUser',function(res) {
+        user.birthdate=modal.find('.year').val()+'-'+'0'+modal.find('.month').val()+'-'+'0'+modal.find('.day').val();
+        $('#ndate').html(user.birthdate);
+      });
+    */
+      send("dateChange",{
+        birthdate:modal.find('.year').val()+'-'+'0'+
+        modal.find('.month').val()+'-'+'0'+
+        modal.find('.day').val()
+      });
+
+      $('#ndate').html(modal.find('.year').val()+'-'+'0'+
+        modal.find('.month').val()+'-'+'0'+
+        modal.find('.day').val());
+
+      modal.hide();
+
+  }else if(modal.find('.month').val() < 10){
+    /*
+      post({birthdate:modal.find('.year').val()+'-'+'0'+modal.find('.month').val()+'-'+modal.find('.day').val()},'/updateUser',function(res) {
+        user.birthdate=modal.find('.year').val()+'-'+'0'+modal.find('.month').val()+'-'+modal.find('.day').val();
+        $('#ndate').html(user.birthdate);
+      });
+    */
+      send("dateChange",{
+        birthdate:modal.find('.year').val()+'-'+'0'+
+        modal.find('.month').val()+'-'+modal.find('.day').val()
+      });
+
+      $('#ndate').html(modal.find('.year').val()+'-'+'0'+
+        modal.find('.month').val()+'-'+modal.find('.day').val()); 
+
+      modal.hide();
+
+  }else{
+    /*
+      post({birthdate:modal.find('.year').val()+'-'+modal.find('.month').val()+'-'+modal.find('.day').val()},'/updateUser',function(res) {
+        user.birthdate=modal.find('.year').val()+'-'+modal.find('.month').val()+'-'+modal.find('.day').val();
+        $('#ndate').html(user.birthdate);
+      });
+    */
+      send("dateChange",{
+        birthdate:modal.find('.year').val()+'-'+modal.find('.month').val()+'-'+modal.find('.day').val()
+      });
+      
+      $('#ndate').html(modal.find('.year').val()+'-'+modal.find('.month').val()+'-'+modal.find('.day').val()); 
+
+      modal.hide();
+  }
+
+}
+
+</script>

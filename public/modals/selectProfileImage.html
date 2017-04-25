@@ -1,0 +1,94 @@
+<div class="postWindow modal">
+
+  <div class="top to">
+    <div class="title">Foto de perfil</div>
+    <img class="close btn" src="/*.png" onload="this.src=IMG_CLOSE">
+  </div>
+
+  <div class="link">
+    <div class="tit" style="margin-bottom:15px">Sube una imagen</div>
+    <div class="fileInput btn">Seleccionar</div>
+  </div>
+
+  <div class="images to">
+    <div class="tit">Selecciona desde tus fotos</div>
+    <div class="contenedor"></div>
+  </div>
+
+  <span style="display:none">
+    <div photoID class="image btn shadow prefab">
+      <div class="imgCont">
+        <img class="photo loading" src onload="imageReady(this)">
+      </div>
+    </div>
+  </span>
+</div>
+
+<style>
+.postWindow{
+  margin-bottom: 100px;
+}
+.postWindow .tit{
+  margin-top:20px;
+  color:#666;
+  font-size:14px;
+  margin-bottom:10px;
+}
+.postWindow .images{
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.postWindow .image{
+  max-height:50px;
+  text-align: center;
+  border:#FFF solid 4px;
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+.postWindow .image .imgCont{
+  max-width:200px;
+  overflow: hidden;
+}
+.postWindow .fileInput{
+  color:#FFF;
+  width:200px;
+  height:25px;
+  line-height: 25px;
+  background:#3fa9f5;
+  border-radius: 3px;
+  text-align: center;
+  font-size:10px;
+}
+.postWindow .image .photo{
+  position: relative;
+  height: 50px;
+}
+</style>
+
+<script>
+
+  var imagePrefab  =  modal.find(".image.prefab");
+
+  modal.find(".fileInput").click(function(){
+    photoInput.trigger( "click" );
+  });
+  modal.on("click",".image",function(){
+    var id = $(this).attr('photoID');
+    getImagesFromID([id],null,function(im){
+      png(im[0].url, function(d) {
+        croopper(d);
+      });
+    });
+  });
+  getImagesFromID(user.photos,null,function(data){
+    for(var i in data){
+      var img = imagePrefab.clone();
+      img.find("img").attr("src",imgSize(data[i].url,"s"));
+      img.attr("photoID",data[i]._id);
+      modal.find(".contenedor").append(img);
+    }
+  });
+
+</script>

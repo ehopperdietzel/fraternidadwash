@@ -1,0 +1,158 @@
+<div id="completeRegister" class="modal">
+  <center>
+    <div class="title">Completa el Registro</div>
+    <div class="error"></div>
+    <input class="fname" type="text" placeholder="Nombre" style="margin-bottom: 9px;"><br>
+    <input class="lname" type="text" placeholder="Apellido">
+    <div class="select"><select class="city"></select></div>
+    <div class="select"><select class="career"><option val="" disabled selected>Carrera</option></select></div>
+    <div class="select"><select class="yearIn"></select></div>
+    <div class="tit">Fecha de nacimiento</div>
+    <div class="birtdate">
+      <div class="select"><select class="day"></select></div>
+      <div class="select"><select class="month"></select></div>
+      <div class="select"><select class="year"></select></div>
+    </div>
+    <div class="button btn">Listo</div>
+  </center>
+</div>
+
+<style>
+#completeRegister{
+  margin:0 auto;
+  position: relative;
+  top:10vh;
+  background:#FFF;
+  padding:10px;
+  padding-top: 20px;
+  border-radius: 10px;
+  width:550px;
+}
+#completeRegister input{
+  width:282px;
+  padding:8px;
+  border:solid 1px #CCC;
+  border-radius: 3px;
+}
+#completeRegister input::placeholder{
+  color:#444;
+}
+#completeRegister .tit{
+  text-align: left;
+  width:300px;
+  margin:0 auto;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+#completeRegister .title{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+#completeRegister .select{
+  display: inherit;
+  width:300px;
+  margin:10px;
+}
+#completeRegister .birtdate .select{
+  width:82px;
+  display: inline-block;
+}
+#completeRegister .error{
+  display:none;
+  margin:0 auto;
+  width:400px;
+  margin-bottom:8px;
+  text-align: center;
+  font-size: 13px;
+  color:#ff1d25;
+}
+#completeRegister .button{
+  margin:0 auto;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  text-align: center;
+  padding:8px;
+  border-radius: 5px;
+  font-size: 13px;
+  color:#FFF;
+  width:350px;
+  background:#3fa9f5;
+}
+</style>
+<script>
+
+$(document).ready(function(){
+  var d       = new Date();
+  var n       = d.getFullYear();
+  var cont    = $("#completeRegister");
+  var _fname  = cont.find(".fname");
+  var _lname  = cont.find(".lname");
+  var _city   = cont.find(".city");
+  var _career = cont.find(".career");
+  var _yearIn = cont.find(".yearIn");
+  var _year   = cont.find(".year");
+  var _month  = cont.find(".month");
+  var _err    = cont.find(".error");
+  var _day    = cont.find(".day");
+  var _btn    = cont.find(".button");
+  var html    = '<option value="" disabled selected>Sede</option>';
+  for(var city in user.carreras){
+    html += '<option value="'+city+'">'+city+'</option>';
+  }
+  _city.html(html);
+  _city.change(function(){
+    html = "<option value='' disabled selected>Carrera</option>";
+    for(var carrera in user.carreras[_city.val()]){
+      html += '<option value="'+carrera+'">'+user.carreras[_city.val()][carrera]+'</option>';
+    }
+    _career.html(html);
+  });
+  html = "<option value='' disabled selected>Año de ingreso</option>";
+  for(var i = n;i>=1920;i--){
+    html += '<option value="'+i+'">'+i+'</option>';
+  }
+  _yearIn.html(html);
+  html = "<option value='' disabled selected>Año</option>";
+  for(var i = n-18;i>1920-18;i--){
+    html += '<option value="'+i+'">'+i+'</option>';
+  }
+  _year.html(html);
+  html = "<option value='' disabled selected>Mes</option>";
+  for(var i = 1;i<=12;i++){
+    html += '<option value="'+i+'">'+i+'</option>';
+  }
+  _month.html(html);
+  html = "<option value='' disabled selected>Día</option>";
+  for(var i = 1;i<=31;i++){
+    html += '<option value="'+i+'">'+i+'</option>';
+  }
+  _day.html(html);
+  _btn.click(function(){
+    post({
+      fname:_fname.val(),
+      lname:_lname.val(),
+      city:_city.val(),
+      career:_career.val(),
+      yearIn:parseInt(_yearIn.val()),
+      year:parseInt(_year.val()),
+      month:parseInt(_month.val()),
+      day:parseInt(_day.val())
+    },"/completeRegister",function(res){
+      if(!res.status){
+        _err.html(res.msg).show(200);
+      }
+      else{
+        user = res.msg;
+        saveCurrentUser();
+        currentSection = "profile";
+        showSection(currentSection);
+        modal.fadeOut(200);
+      }
+    });
+  });
+});
+
+</script>

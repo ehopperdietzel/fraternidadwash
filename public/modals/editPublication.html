@@ -1,0 +1,26 @@
+<div class="postWindow modal editStory">
+  <div class="top">
+    <div class="title">Edita tu publicación</div>
+    <img class="close btn clos" src="/*.png" onload="this.src=IMG_CLOSE">
+  </div>
+  <textarea class="text" placeholder="Mensaje"></textarea>
+  <div class="bottom">
+    <div class="btn post sve">Guardar</div>
+    <div class="btn post clos" style="background:#bdccd4">Cancelar</div>
+  </div>
+</div>
+
+<style>
+.editStory{
+  height:125px;
+}
+.editStory .post{
+  margin-left: 10px;
+}
+</style>
+
+<script>
+  modal.find(".clos").click(function(){
+    modal.empty().fadeOut(200);
+  });
+</script>

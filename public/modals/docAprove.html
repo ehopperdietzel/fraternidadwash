@@ -1,0 +1,59 @@
+<div class="postWindow modal alert">
+  <div class="top">
+    <center><div class="title">Verificación de documento</div><center>
+    <img class="close btn clos" src="/*.png" onload="this.src=IMG_CLOSE">
+  </div>
+  <div class="middle">
+    <div class="value">Título: <span class="tit"></span></div>
+    <div class="value">Asignatura: <span class="subject"></span></div>
+    <div class="value">Profesor: <span class="teacher"></span></div>
+    <div class="value">Año: <span class="year"></span></div>
+    <center><div class="shadow" style="display:inline-block;border-radius:6px;padding:5px;margin-bottom:10px;"><a href="http://google.com" class="embedly-card"></a></div></center>
+  </div>
+  <div class="bottom">
+    <div class="btn post sve app">Aprobar</div>
+    <div class="btn post sve des">Desaprobar</div>
+    <div class="btn post clos" style="background:#bdccd4">Cancelar</div>
+  </div>
+</div>
+
+<style>
+.modal.alert{
+  padding-bottom: 35px;
+  margin-top:4vh;
+}
+.modal.alert .title{
+  position:relative;
+  margin:0 auto;
+}
+
+.modal.alert .post{
+  margin-left: 10px;
+  position: relative;
+}
+.modal .value{
+  color:#444;
+  font-size:13px;
+  font-weight: bold;
+  margin:5px;
+}
+.modal .value span{
+  color:#888;
+  font-weight: normal;
+}
+.modal .middle{
+  margin-top: 30px;
+}
+.modal.alert .des{
+  background:#ff1d25;
+}
+.modal.alert .app{
+  background:#7ac943;
+}
+</style>
+
+<script>
+  modal.find(".clos").click(function(){
+    modal.empty().fadeOut(200);
+  });
+</script>

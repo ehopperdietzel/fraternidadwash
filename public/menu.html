@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fraternidad Wash</title>
+    <link href="/css/menu.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.4.0/croppie.min.css" rel="stylesheet" type="text/css">
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    <link href="/css/profile.css" rel="stylesheet" type="text/css">
+    <link href="/css/users.css" rel="stylesheet" type="text/css">
+    <link href="/css/questions.css" rel="stylesheet" type="text/css">
+    <link href="/css/publications.css" rel="stylesheet" type="text/css">
+    <link href="/css/documents.css" rel="stylesheet" type="text/css">
+    <link href="/css/events.css" rel="stylesheet" type="text/css">
+    <link href="/css/configurations.css" rel="stylesheet" type="text/css">
+    <link href="/css/loader.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link rel="mask-icon" href="/Mac-Logo.svg" color="#3fa9f5">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="application/javascript"></script>
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.4.0/croppie.min.js" type="application/javascript"></script>
+
+    <script src="/js/library/cookie.js"     type="application/javascript"></script>
+    <script src="/js/library/resize.js"     type="application/javascript"></script>
+    <script src="/js/app/global.js"         type="application/javascript"></script>
+    <script src="/js/app/variables.js"      type="application/javascript"></script>
+    <script src="/js/app/utilities.js"      type="application/javascript"></script>
+    <script src="/js/app/cache.js"          type="application/javascript"></script>
+    <script src="/js/app/requests.js"       type="application/javascript"></script>
+    <script src="/js/app/sockets.js"        type="application/javascript"></script>
+    <script src="/js/app/chat.js"           type="application/javascript"></script>
+    <script src="/js/app/images.js"         type="application/javascript"></script>
+    <script src="/js/app/interface.js"      type="application/javascript"></script>
+    <script src="/js/app/notifications.js"  type="application/javascript"></script>
+
+    <script src="/js/sections/publications.js" type="application/javascript"></script>
+    <script src="/js/sections/documents.js" type="application/javascript"></script>
+    <script src="/js/sections/configurations.js" type="application/javascript"></script>
+    <script src="/js/sections/profile.js"   type="application/javascript"></script>
+    <script src="/js/sections/users.js"     type="application/javascript"></script>
+    <script src="/js/app/init.js"           type="application/javascript"></script>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <!-- Notifications -->
+
+    <div id="notificationsWindow" class="shadow">
+
+      <div class="bell">
+        <div class="shadow">
+          <div class="counter shadow">0</div>
+          <img src="/*.png" onload="this.src=IMG_BELL">
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab publications" tab="0">
+          <div class="counter" style="background:#ff1d25"></div>
+          <img src="/*.png" onload="this.src=IMG_NEWS">
+          <div class="selectionLine" style="background:#ff1d25"></div>
+        </div>
+        <div class="tab users" tab="1">
+          <div class="counter" style="background:#7ac943"></div>
+          <img src="/*.png" onload="this.src=IMG_GROUPS">
+          <div class="selectionLine" style="background:#7ac943"></div>
+        </div>
+        <div class="tab questions" tab="2">
+          <div class="counter" style="background:#ff931e"></div>
+          <img src="/*.png" onload="this.src=IMG_QUESTIONS">
+          <div class="selectionLine" style="background:#ff931e"></div>
+        </div>
+        <div class="tab documents" tab="3">
+          <div class="counter" style="background:#ff7bac"></div>
+          <img src="/*.png" onload="this.src=IMG_DOCS">
+          <div class="selectionLine" style="background:#ff7bac"></div>
+        </div>
+        <div class="tab events" tab="4">
+          <div class="counter" style="background:#662d91"></div>
+          <img src="/*.png" onload="this.src=IMG_EVENTS">
+          <div class="selectionLine" style="background:#662d91"></div>
+        </div>
+      </div>
+
+      <div class="notifications"></div>
+
+    </div>
+
+    <!-- Top Bar -->
+    <table id="topBar" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="280px" style="min-width:105px">
+          <img class="titleImage" src="/*.png" onload="this.src=IMG_TITLELOGO">
+        </td>
+        <td width="110px">
+          <div class="topBarItem unsel" section="profile">
+            <img src="/*.png" onload="this.src=IMG_PROFILE"></img>
+            <div class="name" style="color:#3fa9f5">Perfil</div>
+            <div class="selectionLine" style="background:#3fa9f5;display:inherit"></div>
+          </div>
+        </td>
+        <td width="110px">
+          <div class="topBarItem unsel" section="users">
+            <img src="/*.png" onload="this.src=IMG_GROUPS"></img>
+            <div class="name" style="color:#7ac943">Usuarios</div>
+            <div class="selectionLine" style="background:#7ac943"></div>
+          </div>
+        </td>
+        <td width="110px">
+          <div class="topBarItem unsel" section="questions">
+            <img src="/*.png" onload="this.src=IMG_QUESTIONS"></img>
+            <div class="name" style="color:#ff931e">Preguntas</div>
+            <div class="selectionLine" style="background:#ff931e"></div>
+          </div>
+        </td>
+        <td width="110px">
+          <div class="topBarItem unsel" section="publications">
+            <img src="/*.png" onload="this.src=IMG_NEWS"></img>
+            <div class="name" style="color:#ff1d25">Publicaciones</div>
+            <div class="selectionLine" style="background:#ff1d25"></div>
+          </div>
+        </td>
+        <td width="110px">
+          <div class="topBarItem unsel" section="documents">
+            <img src="/*.png" onload="this.src=IMG_DOCS"></img>
+            <div class="name" style="color:#ff7bac">Documentos</div>
+            <div class="selectionLine" style="background:#ff7bac"></div>
+          </div>
+        </td>
+        <td width="110px">
+          <div class="topBarItem unsel" section="events">
+            <img src="/*.png" onload="this.src=IMG_EVENTS"></img>
+            <div class="name" style="color:#662d91">Eventos</div>
+            <div class="selectionLine" style="background:#662d91"></div>
+          </div>
+        </td>
+        <td width="110px">
+          <div class="topBarItem unsel" section="configurations">
+            <img src="/*.png" onload="this.src=IMG_BIGGEAR"></img>
+            <div class="name" style="color:#bdccd4">Configuraciones</div>
+            <div class="selectionLine" style="background:#bdccd4"></div>
+          </div>
+        </td>
+        <td width="17%" style="position:relative;min-width:160px">
+          <img src="/*.png" onload="this.src=IMG_SEARCH" class="lupa"></img>
+          <input class="searchBar" type="text" placeholder="Usuarios, eventos, noticias, etc"></input>
+        </td>
+        <td width="4%" style="position:relative;text-align:center;min-width:30px">
+          <img src="/*.png" onload="this.src=IMG_LOGOUT" style="margin-left:10px;height:15px;vertical-align:middle;" class="btn logout"></img>
+        </td>
+      </tr>
+    </table>
+    <!-- Left Bar -->
+    <div id="chatWindow">
+
+      <div class="searchMessages">
+        <td><input type="text" placeholder="Buscar"></td>
+      </div>
+      <div class="messages">
+        <div class='noFound' style='padding-top:15px;width:100%;text-align:center;font-size:13px;color:#999;display:none'>Ningún contacto encontrado</div>
+      </div>
+      <div id="chat">
+
+        <div class="topCharBar gradOrange unsel" onclick="chatObj.close()">
+          <div class="contactStatus ON"></div>
+          <div class="chatName">Elliot Alderson</div>
+          <div class="closeBtn">×</div>
+        </div>
+
+        <div class="chatMessages">
+          <div class="msgs" style="position:relative"></div>
+          <div class="visto" style="color:#666;font-size:9px;float:right;width:100%;text-align:right;padding:7px;display:none">Visto ✓</div>
+        </div>
+
+        <div class="chatInput">
+          <input type="text" placeholder="Mensaje">
+          <img class="upload unsel" src="/*.png" onload="this.src=IMG_ATTACH">
+        </div>
+
+      </div>
+    </div>
+    <!-- Middle Bar -->
+    <div id="middleBar">
+
+    </div>
+    <!-- Right Bar -->
+    <div id="rightBar" class="unsel">
+
+      <div class="sectionName">Próximos Eventos</div>
+      <div class="rightWindow events">
+        <div style="font-size:13px;color:#CCC;margin:0 auto;">Ningún evento</div>
+        <!--
+        <div class="event red">
+          <div class="name">Prueba Cálculo I</div>
+          <div class="time">Lun 17:30</div>
+        </div>
+        <div class="event green">
+          <div class="name">Peña Shaw</div>
+          <div class="time">Mier 21:30</div>
+        </div>
+        <div class="event orange">
+          <div class="name">Trabajo 2 Lineal</div>
+          <div class="time">Jue 23:59</div>
+        </div>
+        <div class="event red">
+          <div class="name">Prueba Objetos</div>
+          <div class="time">Vie 17:30</div>
+        </div>
+      -->
+      </div>
+
+      <div class="sectionName">Anuncios</div>
+      <div class="rightWindow adds">
+
+        <div class="add">
+          <img src="http://i.imgur.com/iuwF96g.png"/>
+          <div class="cont">
+            <div class="name truncate">Cuarzo Player ®</div>
+            <div class="desc">Organiza, sube, y escucha tu música grátis y sin anuncios desde cualquier dispositivo.</div>
+            <a class="phone truncate" style="display:none" href="tel:+6494461709">+56 9 321 535 44</a>
+            <a class="site truncate" href="http://www.cuarzo.com">www.cuarzo.com</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div id="modal" style="display:none" class="blackBackground publicationModal"></div>
+    <form style="display:none" id="photoUploader" enctype="multipart/form-data">
+      <input name="file" type="file" accept="image/*"/>
+    </form>
+    <div id="prefabs" style="display:none">
+
+      <!-- Publicacion -->
+      <div class="publication shadow" publicationID>
+
+        <div class="top">
+          <img src="/*.png" class="profImage">
+          <img src="/*.png" class="options btn" onload="this.src=IMG_MINIGEAR">
+          <div class="h">
+            <div class="fullname"></div>
+            <div class="type">Ha publicado</div>
+          </div>
+          <div class="date"></div>
+        </div>
+        <div class="content"></div>
+        <div class="urls"></div>
+        <div class="attach"></div>
+        <div class="infoBar">
+          <div class="gus btn"><span class="num"></span> <span class="name">Me gusta</span></div>
+          <div class="com btn"><span class="num"></span> <span class="name">Comentarios</span></div>
+        </div>
+      </div>
+
+      <!-- Imagenenes de perfil -->
+      <div class="imgCont btn" photoID>
+        <div class="photo">
+          <img src class="loading" onload="imageReady(this)">
+        </div>
+      </div>
+
+      <!-- Card de usuario -->
+      <div class="userCard" userID>
+        <img class="loading" src="/*.png" onload>
+        <div class="name"></div>
+        <div class="view btn">Ver Perfil</div>
+      </div>
+
+
+      <!-- Dropdown  -->
+      <div class="dropdown" style="right:7px;top:33px;display:none">
+        <div class="arrow-up"></div>
+      </div>
+
+      <!-- Chat user -->
+
+      <div class="contact unsel" chatID chatUserID>
+        <div class="selectionLine"></div>
+        <img class="contactImage" src>
+        <div class="contactStatus"></div>
+        <div class="text">
+          <div class="contactName truncate"></div>
+          <div class="lastMessage truncate"></div>
+        </div>
+        <div class="counter">1</div>
+      </div>
+
+      <!-- Chat messages messageA messageB-->
+
+      <div class="fileMessage">
+        <div class="texto">
+          <table class="uploadedFile">
+            <td><img src="/*.png" onload="this.src=IMG_FILE"></td>
+            <td><a target="_blank" href="http://www.hola.com">Informe.zip</a></td>
+          </table>
+        </div>
+        <div class="view">✓ 3:45</div>
+      </div>
+
+      <div class="normalMessage" messageID>
+        <div class="texto"><img class="uploadedImage"></div>
+        <div class="view">✓ 3:46</div>
+      </div>
+
+      <div class="linkMessage">
+        <div class="texto"><a target="_blank" href="http://www.hola.com">http://www.hola.com</a></div>
+        <div class="view">3:47</div>
+      </div>
+
+      <!-- Comentario -->
+
+      <div class="comm" commentID>
+        <img class="options btn" src="/*.png" onload="this.src=IMG_MINIGEAR">
+        <div class="left inline">
+          <img src class="loading profImg shadow">
+        </div>
+        <div class="right inline">
+          <div class="l1">
+            <div class="fullname inline"></div>
+            <div class="time inline"></div>
+          </div>
+          <div class="l2">
+            <div class="text"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Document -->
+      <table style="display:none;width:0">
+        <tr class="docPrefab" documentID>
+          <td class="type"><img src class="loading"></td>
+          <td class="name"></td>
+          <td class="carr"></td>
+          <td class="prof"></td>
+          <td class="year"></td>
+          <td class="dwnl btn"><a target="_blank" href>Ir al link</a></td>
+          <td class="edit btn"><img src="/*.png" onload="this.src=IMG_MINIGEAR"></td>
+        </tr>
+      </table>
+
+      <!-- Pub image big -->
+      <img photoID class="imageAdded loading btn" onload="imageReady(this)" src>
+      <!-- Pub image small -->
+      <img photoID class="miniImageAdded loading btn" onload="imageReady(this)" src>
+
+      <!-- Downloader -->
+      <a id="downloader" href target="_blank" download></a>
+
+      <!-- Notificación  -->
+      <div class="notification">
+        <div class="left">
+          <img src width="35" height="35">
+        </div>
+        <div class="right">
+          <div class="title"><span class="pre"></span> <span userID class="btn user goToUser"></span> <span class="description"></span> <span class="conector"></span> <span class="btn type"></span> <span class="space"></span> <span class="from btn"></span> <span class="info">"<div></div>"</span></div>
+          <div class="time"></div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

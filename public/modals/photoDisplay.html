@@ -1,0 +1,109 @@
+<div id="showPhoto" class="modal unsel" photoID fromSection fromID>
+  <div class="_top">
+    <img class="_userPhoto shadow loading" src>
+    <div class="inline" style="vertical-align:top;margin-left:5px">
+      <div class="_username">Eduardo Hopperdietzel</div>
+      <div class="_time">Hace 2 minutos</div>
+    </div>
+    <img class="_options btn" src="/*.png" onload="this.src=IMG_MINIGEAR">
+  </div>
+  <div class="_middle">
+    <img class="_photo loading" src>
+    <div class="controls">
+      <div class="left">
+        <div class="arrow-left"></div>
+      </div>
+      <div class="right">
+        <div class="arrow-right"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+#showPhoto{
+  margin:0 auto;
+  position: relative;
+  top:8vh;
+  background:#FFF;
+  padding:10px;
+  border-radius: 10px;
+  width:500px;
+}
+#showPhoto ._userPhoto{
+  border:3px solid white;
+  height:25px;
+  width:25px;
+  border-radius:3px;
+}
+#showPhoto ._username{
+  color:#444;
+  font-size:12px;
+}
+#showPhoto ._time{
+  color:#888;
+  padding-top:2px;
+  font-size:9px;
+}
+#showPhoto ._options{
+  position:absolute;
+  top:10px;
+  right:10px;
+  height:15px;
+}
+#showPhoto .controls{
+  position:absolute;
+  width:calc(100% - 20px);
+  top:calc(50% - 30px);
+}
+#showPhoto .controls .left{
+  position:absolute;
+  width:30px;
+  height:60px;
+  border-radius:0px 30px 30px 0px;
+  background:black;
+  opacity:0.5;
+  left:0;
+}
+#showPhoto .controls .left:hover, #showPhoto .controls .right:hover{
+  opacity:0.7;
+  cursor:pointer;
+}
+#showPhoto .controls .left:active, #showPhoto .controls .right:active{
+  opacity:0.5;
+}
+#showPhoto .controls .right{
+  position:absolute;
+  width:30px;
+  height:60px;
+  border-radius:30px 0px 0px 30px;
+  background:black;
+  opacity:0.5;
+  right:0;
+}
+#showPhoto ._photo{
+  margin-top: 10px;
+  width:100%;
+  border-radius: 2px;
+}
+#showPhoto .arrow-right {
+  margin-left: 14px;
+  margin-top:18px;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 11px solid #EEE;
+}
+
+#showPhoto .arrow-left {
+  margin-left: 5px;
+  margin-top:18px;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-right:11px solid #EEE;
+}
+
+</style>

@@ -1,0 +1,131 @@
+<div class="postWindow modal alert">
+  <div class="top">
+    <div class="title">Añadir documento</div>
+    <img class="close btn clos" src="/*.png" onload="this.src=IMG_CLOSE">
+  </div>
+  <div class="middle">
+    <input class="text tit" type="text" placeholder="Título del documento"><br>
+    <input class="text url" type="text" placeholder="Link de descarga o contenido"><br>
+    <div class="select">
+      <select class="subject">
+        <option selected="true" disabled="disabled">Asignatura</option>
+      </select>
+    </div><br>
+    <div class="select">
+      <select class="year">
+        <option selected="true" disabled="disabled">Año</option>
+      </select>
+    </div><br>
+    <div class="select">
+      <select class="prof">
+        <option value="" selected="true" disabled="disabled">Profesor</option>
+        <option value="none">Ningún profesor</option>
+      </select>
+    </div><br>
+    <div class="select">
+      <select class="type">
+        <option value="" selected="true" disabled="disabled">Tipo de archivo</option>
+      </select>
+    </div><br>
+  </div>
+  <div class="err"></div>
+  <div class="bottom">
+    <div class="btn post sve">Subir</div>
+  </div>
+</div>
+
+<style>
+.modal{
+  width:400px;
+}
+.modal center{
+  padding:2px;
+  padding-top: 20px;
+  padding-bottom:20px;
+  font-size:13px;
+  color:#666;
+}
+.modal .select{
+  width:100%;
+  height:30px;
+  margin-top: 10px;
+}
+.modal .text{
+  outline:none;
+  margin-top: 10px;
+  width:calc(100% - 16px);
+  padding:8px;
+  border:solid 1px #CCC;
+  border-radius:4px;
+}
+.modal.alert{
+  padding-bottom: 45px;
+}
+.modal .cl{
+  border-radius: 5px;
+  color:#FFF;
+  top:15px;
+}
+.modal.alert .title{
+  position:relative;
+  margin:0 auto;
+}
+.modal.alert .post{
+  margin-left: 10px;
+  position: relative;
+}
+.modal.alert .sve{
+  padding:7px;
+  width:calc(100% - 15px);
+  margin:0 auto;
+  margin-top:5px;
+  text-align: center;
+  background:#3fa9f5;
+}
+.modal.alert .err{
+  font-size: 13px;
+  width:100%;
+  text-align:center;
+  color:#ff1d25;
+  padding-top: 10px;
+}
+</style>
+
+<script>
+  var Mtype = modal.find(".type");
+  var Mteacher = modal.find(".prof");
+  var Msubject = modal.find(".subject");
+  var Myear = modal.find(".year");
+  var year = new Date().getFullYear();
+  modal.find(".clos,.cl").click(function(){
+    modal.empty().fadeOut(200);
+  });
+  for(var d in fileTypes){
+    Mtype.append('<option value="'+d+'">'+fileTypes[d]+'</option>')
+  }
+  for(var t in teachers){
+    Mteacher.append('<option value="'+t+'">'+teachers[t]+'</option>')
+  }
+  for(var s in subjects){
+    Msubject.append('<option value="'+s+'">'+subjects[s]+'</option>')
+  }
+  for(var y = year;y>year - 30; y--){
+    Myear.append('<option value="'+y+'">'+y+'</option>')
+  }
+  modal.find(".post").click(function(){
+    post({title:modal.find(".tit").val(),url:modal.find(".url").val(),type:parseInt(Mtype.val()),teacher:parseInt(Mteacher.val()),subject:parseInt(Msubject.val()),year:parseInt(Myear.val())},"/newDocument",function(res){
+      if(res.state == false){
+        modal.find(".err").html(res.msg);
+      }
+      else{
+        modal.find(".err").remove();
+        modal.find(".title").html("Documento enviado!");
+        modal.find(".bottom").html('<div class="btn cl sve">Entendido</div>');
+        modal.find(".middle").html("<center>El documento ha sido enviado con éxito, pero debes contar con la aprobación de 3 usuarios para que sea visible.</center>");
+        modal.find(".cl").click(function(){
+          modal.empty().fadeOut(200);
+        });
+      }
+    })
+  });
+</script>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cerrando sesión</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="application/javascript"></script>
+  <script src="/js/library/cookie.js" type="application/javascript"></script>
+</head>
+<body>
+<script>
+  for (var it in $.cookie()) $.removeCookie(it);
+  localStorage.clear();
+  window.location.href = "/login";
+</script>
+</body>
+</html>

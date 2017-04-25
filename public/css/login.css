@@ -1,0 +1,140 @@
+/* Login */
+:root {
+  --azul:#0071bc;
+  --celeste: #3fa9f5;
+  --verde:#7ac943;
+  --rojo:#ff1d25;
+  --naranjo:#ff931e;
+  --gris:#bdccd4;
+  --rosado:#ff7bac;
+}
+body{
+  overflow: hidden;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  display:none;
+}
+.btn{
+  cursor:pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+.btn:hover{
+  filter: brightness(110%);
+}
+.btn:active{
+  filter: brightness(90%);
+}
+
+.back{
+  z-index: -1;
+  position: absolute;
+  width:calc(100vw + 20px);
+  height:calc(100vh + 20px);
+  top:-2px;
+  left:-2px;
+  overflow: hidden;
+  -webkit-transform:translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  filter:blur(4px);
+}
+.background{
+  position: relative;
+  width:calc(100vw + 10px);
+  height:calc(100vh + 10px);
+  top:-5px;
+  left:-5px;
+  background: url("http://i.imgur.com/pESSjr5.jpg") center center no-repeat;
+  background-size: cover;
+}
+#loginWindow{
+  position: relative;
+  margin:0 auto;
+  margin-top:20vh;
+  color:#FFF;
+}
+#loginWindow img{
+  height:90px;
+}
+#loginWindow .error{
+  color:#ff1d25;
+  font-weight: bold;
+  display:none;
+}
+#loginWindow .title{
+  font-weight: bold;
+  margin:5px;
+  font-size: 28px;
+}
+#loginWindow input{
+  outline: none;
+  border:none;
+  border-radius: 5px;
+  margin:5px;
+  padding:10px;
+  width:320px;
+  font-size:18px;
+}
+#loginWindow input::placeholder{
+  color:#CCC;
+}
+#loginWindow .loginBtn{
+  border-radius: 5px;
+  margin:5px;
+  padding-top:10px;
+  padding-bottom:10px;
+  width:340px;
+  font-size:15px;
+  background:#0071bc;
+}
+#loginWindow .regBtn{
+  border-radius: 5px;
+  margin:10px;
+  padding-top:10px;
+  padding-bottom:10px;
+  width:340px;
+  font-size:15px;
+  background:#7ac943;
+}
+.goToLog, .goToReg{
+  border-radius: 5px;
+  margin:10px;
+  padding-top:10px;
+  padding-bottom:10px;
+  width:340px;
+  font-size:15px;
+  background:#3fa9f5;
+}
+#loginWindow .forget{
+  padding:10px;
+  font-size:15px;
+}
+#loginWindow .register{
+  display:none;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 96%}
+    50%{background-position:100% 5%}
+    100%{background-position:0% 96%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 96%}
+    50%{background-position:100% 5%}
+    100%{background-position:0% 96%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 96%}
+    50%{background-position:100% 5%}
+    100%{background-position:0% 96%}
+}
+.loading {
+  filter: brightness(80%);
+  background: linear-gradient(79deg, #3fa9f5, #7ac943, #ff931e, #ff1d25, #ff7bac);
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 16s ease infinite;
+  -moz-animation: AnimationName 16s ease infinite;
+  animation: AnimationName 16s ease infinite;
+}

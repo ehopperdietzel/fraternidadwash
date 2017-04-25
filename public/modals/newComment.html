@@ -1,0 +1,20 @@
+<div class="postWindow modal">
+  <div class="top">
+    <div class="title">¿Quién gano el campeonato de futbol de miraflores?</div>
+    <img class="closeBtn close btn" src="/*.png" onload="this.src=IMG_CLOSE">
+  </div>
+  <textarea class="text" placeholder="¿Que tienes en mente?"></textarea>
+  <div class="bottom">
+    <img class="addPhoto btn" src="/*.png" onload="this.src=IMG_PHOTO">
+    <img class="addLink btn" src="/*.png" onload="this.src=IMG_URL">
+    <div class="btn post" style="background-color: var(--verde)">Comentar</div>
+  </div>
+</div>
+
+<script>
+
+  modal.find(".closeBtn").click(function(){
+    modal.empty().fadeOut(200);
+  });
+
+</script>

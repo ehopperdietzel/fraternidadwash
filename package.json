@@ -1,0 +1,36 @@
+{
+  "name": "youniversity",
+  "version": "1.0.0",
+  "description": "Red social para la Universidad Austral de Chile",
+  "keywords": [
+    "uach",
+    "fraternidad",
+    "universidad",
+    "austral",
+    "chile",
+    "valdivia"
+  ],
+  "author": "Cuarzo Software",
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node --use_strict index.js"
+  },
+  "private": true,
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect-busboy": "0.0.2",
+    "connect-timeout": "^1.8.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "imgur-node-api": "^0.1.0",
+    "mongodb": "^2.2.11",
+    "shortid": "^2.2.6",
+    "socket.io": "^1.7.1",
+    "url": "^0.11.0"
+  }
+}

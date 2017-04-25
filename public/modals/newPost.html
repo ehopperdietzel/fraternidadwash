@@ -1,0 +1,260 @@
+<div class="postWindow modal">
+  <div class="top to">
+    <div class="title">Nuevo Post</div>
+    <img class="close btn" src="/*.png" onload="this.src=IMG_CLOSE">
+  </div>
+  <textarea class="text to" placeholder="¿Que tienes en mente?"></textarea>
+  <div class="link">
+    <div class="tit">Link</div>
+    <div class="contenedor"></div>
+  </div>
+  <div class="images to">
+    <div class="tito">Fotos</div>
+    <div class="contenedor"></div>
+  </div>
+  <div class="bottom to">
+    <img class="addPhoto btn" src="/*.png" onload="this.src=IMG_PHOTO">
+    <img class="addLink btn" src="/*.png" onload="this.src=IMG_URL">
+    <div class="btn post">Postear</div>
+  </div>
+
+  <div class="linkInput shadow">
+    <input type="text" placeholder="Añade un link">
+    <div class="btn add inline">Añadir</div>
+    <img class="deletee btn" src="/*.png" onload="this.src=IMG_DELETE">
+  </div>
+
+  <div style="display:none" class="loadingBar">
+    <div class="backBar shadow loading">
+      <div class="bar loadingBarCandy"></div>
+    </div>
+    <div class="percent">0%</div>
+  </div>
+
+  <span style="display:none">
+    <div class="image shadow prefab">
+      <div class="imgCont">
+        <img class="photo loading" src onload="imageReady(this)">
+      </div>
+      <img class="delete btn" src="/*.png" onload="this.src=IMG_DELETE">
+    </div>
+
+    <div class="website shadow inline prefab">
+      <img class="delete btn" src="/*.png" onload="this.src=IMG_DELETE">
+      <span></span>
+    </div>
+
+    <input class="input" name="file" type="file" accept="image/*" multiple>
+  </span>
+</div>
+
+<style>
+.postWindow{
+  margin-bottom: 100px;
+}
+.postWindow .linkInput{
+  display:none;
+  width:100%;
+  background:#3fa9f5;
+  position: absolute;
+  padding:10px;
+  border-radius: 5px;
+  top: 70px;
+  left:-10px;
+}
+.postWindow input{
+  border:none;
+  border-radius: 3px;
+  padding:6px;
+  outline:none;
+  width:calc(100% - 80px);
+}
+.postWindow .btn{
+  color:#FFF;
+  margin-left: 5px;
+}
+.postWindow .tit,.postWindow .tito{
+  color:#666;
+  font-size:14px;
+  margin:4px;
+  display:none;
+}
+.postWindow .website{
+  border:4px solid #FFF;
+  border-radius:5px;
+  padding:1px;
+  margin:5px;
+  margin-bottom: 0;
+  position:relative;
+}
+.postWindow .loadingBar{
+  width:100%;
+}
+.postWindow .backBar{
+  vertical-align: middle;
+  display:inline-block;
+  width:calc(100% - 60px);
+  height:20px;
+  border:4px solid #FFF;
+  border-radius:5px;
+  overflow: hidden;
+}
+.postWindow .bar{
+  height:20px;
+  width:0%;
+}
+.postWindow .percent{
+  vertical-align: middle;
+  display:inline-block;
+  color:#3fa9f5;
+  margin-left: 5px;
+}
+.postWindow .images{
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.postWindow .image{
+  max-height:50px;
+  text-align: center;
+  border:#FFF solid 4px;
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+.postWindow .image .imgCont{
+  max-width:200px;
+  overflow: hidden;
+}
+.postWindow .image .photo{
+  position: relative;
+  height: 50px;
+}
+.postWindow .delete{
+  position:absolute;
+  height:20px;
+  width:20px;
+  top:-13px;
+  right:-13px;
+  z-index: 100;
+}
+.postWindow .deletee{
+  position:absolute;
+  height:20px;
+  width:20px;
+  top:-10px;
+  right:-10px;
+  z-index: 100;
+}
+</style>
+<script>
+
+  var addImage     =  modal.find(".postWindow .addPhoto");
+  var imagePrefab  =  modal.find(".image.prefab");
+  var linkPrefab   =  modal.find(".website.prefab");
+  var input        =  modal.find(".input");
+  var inputImages  = [];
+  var urls         = null;
+
+  addImage.click(function(){
+    input.click();
+  });
+  modal.find(".close").click(function(){
+    modal.fadeOut(200);
+  });
+  modal.find(".addLink").click(function(){
+    modal.find(".linkInput").fadeIn(200);
+  });
+  modal.find(".linkInput .deletee").click(function(){
+    modal.find(".linkInput").fadeOut(200);
+  });
+  modal.find(".linkInput .btn.add").click(function(){
+    var url = modal.find(".linkInput input").val();
+    var link = linkPrefab.clone();
+    urlCard(url,true,function(html){
+      if(html != false){
+        urls = url;
+        modal.find(".linkInput input").val('');
+        modal.find(".linkInput").fadeOut(200);
+        link.find("span").html(html)
+        modal.find(".link .tit").show();
+        modal.find(".link .contenedor").empty().append(link);
+        modal.find(".link .contenedor .delete").click(function(){
+          $(this).parent().hide(200);
+          modal.find(".link .tit").hide(200);
+          urls = null;
+        })
+
+      }
+      else{
+        modal.find(".linkInput input").val('');
+        modal.find(".linkInput").fadeOut(200);
+      }
+    });
+  });
+
+  modal.find(".post").click(function(){
+
+    imgurError = false;
+
+    if(inputImages.length == 0){
+      if(modal.find("textarea").val().length != 0 || urls.lenght != 0){
+        send("newPublication",{text:modal.find("textarea").val(),url:urls,images:[],to:currentUser._id});
+      }
+    }
+    else{
+      modal.find(".to").hide();
+      modal.find(".link").hide();
+      modal.find(".loadingBar").show();
+      upImg(inputImages,[]);
+    }
+  });
+  function upImg(imgs,ids){
+    uploadImage(imgs[ids.length],function(id){
+      if(id == false){
+        imgurError = true;
+        loadModal("imgError");
+        if(ids.length != 0){
+          send("newPublication",{text:modal.find("textarea").val(),url:urls,images:ids,to:currentUser._id});
+        }
+        return;
+      }
+      ids.push(id);
+      var percent = String(parseInt(((80/imgs.length)*ids.length)))+"%";
+      modal.find(".bar").css({width:percent});
+      modal.find(".percent").html(percent);
+      if(imgs.length == ids.length){
+        send("newPublication",{text:modal.find("textarea").val(),url:urls,images:ids,to:currentUser._id});
+        return;
+      }
+      upImg(imgs,ids);
+    });
+  }
+
+  input.change(function(){
+    modal.find(".images .tito").show();
+    for(var f in this.files){
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var i = imagePrefab.clone().removeClass("prefab");
+            i.find(".photo").attr("src",e.target.result);
+            png(e.target.result,function(base64){
+              inputImages.push(base64);
+            });
+            modal.find(".images .contenedor").append(i);
+
+            i.find(".delete").click(function(){
+              $(this).parent(".image").hide(500,function(){
+                $(this).remove();
+              })
+              inputImages.splice($(this).parent(".image").index(),1);
+              if(inputImages.length == 0){
+                modal.find(".images .tito").hide();
+              }
+            })
+        }
+        reader.readAsDataURL(this.files[f]);
+      }
+  });
+
+</script>

@@ -1,0 +1,979 @@
+<!--
+
+  Todo el código de esta sección debe ir dentro del div.
+  Para añadir CSS edita el archivo ubicado en /css/questions.css
+
+-->
+
+
+
+<!-- SECCION1 de questions "preguntas"-->
+
+
+<div class="whiteWindow SECCION1" id="questionsWindow">
+
+  <!-- Sección superior -->
+
+  <div class="pts">
+    <div class="puntaje">40</div>
+    <div class="nombre">Puntos</div>
+  </div>
+
+<div class="input">
+  <img src="e.jpg" onerror="this.src = IMG_SEARCH">
+  <input type="text" placeholder="¿Cuál es tu pregunta?">
+</div>
+<div class="boton btn" onclick="loadModal('preguntar')">Preguntar</div>
+<div class="boton2 btn">Mis preguntas</div>
+</div>
+
+  <!-- Sección de abajo -->
+
+  <!-- Preguntas Recientes -->
+
+  <div class="titleContRec SECCION1">
+    Preguntas Recientes
+  </div>
+
+  <div class="RecCont" style="display:none">
+    <div class="message">Aún no hay preguntas...</div>
+  </div>
+
+  <div class="RecCont SECCION1">
+    <table>
+      <tr>
+        <td class="time" width="40px">10:22</td>
+        <td class="user" width="25%">Sebastian Lara</td>
+        <td class="pregunta" align="left">¿Quién gano el campeonato de futbol?</td>
+        <td class="responder" align="right" width="40px">Ver</td>
+      </tr>
+      <tr>
+        <td class="time">11:49</td>
+        <td class="user">Francisco Manqui</td>
+        <td class="pregunta" align="left">¿Quién es el nuevo presidente de la FEUACH?</td>
+        <td class="responder" align="right">Ver</td>
+      </tr>
+      <tr>
+        <td class="time">13:03</td>
+        <td class="user">Francisco Bahamondes</td>
+        <td class="pregunta" align="left">¿Qué está ocurriendo afuera del campus miraflores en este momento?</td>
+        <td class="responder" align="right">Ver</td>
+      </tr>
+      <tr>
+        <td class="time">13:24</td>
+        <td class="user">Ricardo Coronado</td>
+        <td class="pregunta" align="left">¿Tangananica o tanganana?</td>
+        <td class="responder" align="right">Ver</td>
+      </tr>
+      <tr>
+        <td class="time">14:32</td>
+        <td class="user">José Ortega</td>
+        <td class="pregunta" align="left">¿Quiénes son los genios que crearon esta página?</td>
+        <td class="responder" align="right">Ver</td>
+      </tr>
+      <tr>
+        <td class="time" width="40px">10:22</td>
+        <td class="user" width="25%">Sebastian Lara</td>
+        <td class="pregunta" align="left">¿Quién gano el campeonato de futbolAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaa?</td>
+        <td class="responder" align="right" width="40px">Ver</td>
+      </tr>
+    </table>
+    <div class="verMas1">
+      <span>Ver todas</span>
+    </div>
+  </div>
+
+    <!-- Preguntas Populares -->
+
+  <div class="titleContPopu SECCION1">
+    Preguntas Populares
+  </div>
+
+  <div class="PopuCont" style="display:none">
+    <div class="message">Aún no hay preguntas...</div>
+  </div>
+
+  <div class="PopuCont SECCION1">
+    <table>
+      <tr>
+        <td class="comments" width="5%" >(567)</td>
+        <td class="points" width="5%" >(77)</td>
+        <td class="user" width="20 %" >Francisco Bahamondes</td>
+        <td class="pregunta" width="65%" >¿Qué está ocurriendo afuera del campus miraflores en este momento?</td>
+        <td class="responder" width="5%" >Ver</td>
+      </tr>
+      <tr>
+        <td class="comments" width="5%" >(311)</td>
+        <td class="points" width="5%" >(91)</td>
+        <td class="user" width="20 %" >Eduardo Hopperdietzel</td>
+        <td class="pregunta" width="65%" >¿Cual beatle era tu preferido?</td>
+        <td class="responder" width="5%" >Ver</td>
+      </tr>
+      <tr>
+        <td class="comments" width="5%" >(187)</td>
+        <td class="points" width="5%" >(32)</td>
+        <td class="user" width="20 %" >Sebastián Lara</td>
+        <td class="pregunta" width="65%" >¿Cuales son las ventajas de la marihuana?</td>
+        <td class="responder" width="5%" >Ver</td>
+      </tr>
+      <tr>
+        <td class="comments" width="5%" >(86)</td>
+        <td class="points" width="5%" >(15)</td>
+        <td class="user" width="20 %" >Francisco Manqui</td>
+        <td class="pregunta" width="65%" >¿Podria el trago dejarme mas duro?</td>
+        <td class="responder" width="5%" >Ver</td>
+      </tr>
+      <tr>
+        <td class="comments" width="5%" >(36)</td>
+        <td class="points" width="5%" >(19)</td>
+        <td class="user" width="20 %" >Felipe Salazar</td>
+        <td class="pregunta" width="65%" >¿Sospechan que hay PDI's en la facultad?</td>
+        <td class="responder" width="5%" >Ver</td>
+      </tr>
+      <tr>
+        <td class="comments" width="5%" >(27)</td>
+        <td class="points" width="5%" >(12)</td>
+        <td class="user" width="20 %" >Ignacio Samur</td>
+        <td class="pregunta" width="65%" >¿Como se llama la chica de pelo corto, creo que esudia industrial..?</td>
+        <td class="responder" width="5%" >Ver</td>
+      </tr>
+    </table>
+    <div class="verMas1">
+      <div class="verTodasBtn btn">Ver Todas</div>
+    </div>
+  </div>
+
+    <!-- FIN SECCION1 -->
+
+
+  <!-- SECCION2 de questions "mis preguntas" -->
+
+  <div id="misPregContainer" class="SECCION2" style="display:none">
+    <div class="Superior">
+      <div class="elemento1"></div>
+      <div class="elemento2">Mis preguntas</div>
+      <div class="elemento3">Volver</div>
+    </div>
+
+    <div class="Inferior" style="display:none">
+      <div class="message">¡Aun no has hecho ninguna pregunta!</div>
+    </div>
+
+    <div class="Inferior SECCION2" style="display:none">
+      <table style="width:100%">
+        <tr>
+          <td class="date" align="left">24/01/16</td>
+          <td class="question" align="left">Que dia se iniciaron los juegos olimpicos?</td>
+          <td class="see btn" align="right">Ver</td>
+          <td class="edit" align="right"><img src="r" onerror="this.src=IMG_BIGGEAR" class="editPhoto"></td>
+        </tr>
+        <tr>
+          <td class="date" align="left">24/01/16</td>
+          <td class="question" align="left">Que dia se iniciaron los juegos olimpicos?</td>
+          <td class="see btn" align="right" width="40px">Ver</td>
+          <td class="edit" align="right"><img src="r" onerror="this.src=IMG_BIGGEAR" class="editPhoto"></td>
+        </tr>
+        <tr>
+          <td class="date" align="left">24/01/16</td>
+          <td class="question" align="left">Que dia se iniciaron los juegos olimpicos?</td>
+          <td class="see btn" align="right" width="40px">Ver</td>
+          <td class="edit" align="right"><img src="r" onerror="this.src=IMG_BIGGEAR" class="editPhoto"></td>
+        </tr>
+        <tr>
+          <td class="date" align="left">24/01/16</td>
+          <td class="question" align="left">Que dia se iniciaron los juegos olimpicos?</td>
+          <td class="see btn" align="right" width="40px">Ver</td>
+          <td class="edit" align="right"><img src="r" onerror="this.src=IMG_BIGGEAR" class="editPhoto"></td>
+        </tr>
+        <tr>
+          <td class="date" align="left">24/01/16</td>
+          <td class="question" align="left">Que dia se iniciaron los juegos olimpicos?</td>
+          <td class="see btn" align="right" width="40px">Ver</td>
+          <td class="edit" align="right"><img src="r" onerror="this.src=IMG_BIGGEAR" class="editPhoto"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+   <!-- FIN SECCION2 -->
+
+
+   <!-- SECCION3 "ver" -->
+   <div id="VerPregunta" class="SECCION3" style="display:none">
+     <div class="superior">
+       <div class="autor">Autor: </div>
+       <div class="volverBtn btn">Volver</div>
+       <span class="autor user">Sebastián Lara</span>
+       <br>
+       <div class="question">Pregunta: </div>
+       <span class="question2">¿Quién gano el campeonato de futbol de miraflores?</span>
+       <br>
+       <div class="descriptionSpan">Descripción: </div>
+       <div class="description">No hay descripción</div>
+       <div class="multimedia">Multimedia: </div>
+       <div class="multiContainer">No hay mutlimedia disponible...</div>
+      <div class="lowerBar">
+        <table style="width:100%">
+          <tr>
+            <td aling="left" width="20%"><div class="responderBtn btn" onclick="loadModal('newComment')">Responder</div></td>
+            <td align="right"width="30"><div class="visitas">Comentarios (43)</div></td>
+            <td align="left" width="30%"><div class="currentPoints">Puntos (03)</div></td>
+            <td align="right" width="20%"><div class="givePoints btn">+1</div></td>
+          </tr>
+        </table>
+      </div>
+     </div>
+
+     <div class="inferior">
+       <div class="commentBox">
+         <div class="noComments">Aun no hay comentarios</div>
+       </div>
+     </div>
+  </div>
+  <!-- FIN SECCION 3 -->
+
+  <!-- SECCION 4 "Ver Mas Rec" -->
+  <div id="verMasRec" class="SECCION4" style="display:none">
+    <div class="superior">
+      <div class="elemento1"></div>
+      <div class="elemento2">Preguntas Recientes</div>
+      <div class="elemento3">Volver</div>
+    </div>
+
+    <div class="optionsBar">
+      <div class="elemento1">Filtros</div>
+      <div class="elemento2">Area:
+        <div class="select" style="width:100px">
+          <select class="general">
+            <option value="">Todas</option>
+            <option value="">Salud</option>
+            <option value="">Cs. Básicas</option>
+            <option value="">Biología</option>
+            <option value="">Deporte</option>
+            <option value="">Historia</option>
+            <option value="">Arte</option>
+            <option value="">Musica</option>
+            <option value="">Tecnología</option>
+            <option value="">Social</option>
+            <option value="">Otra</option>
+          </select>
+        </div>
+      </div>
+      <div class="elemento3">Carrera:
+        <input type="text" placeholder="Ingeniería C. Informática...">
+      </div>
+      <div class="elemento4 btn">Filtrar</div>
+    </div>
+
+    <div class="cont">
+        <table>
+          <tr>
+            <td class="time" width="40px">10:22</td>
+            <td class="user" width="25%">Sebastian Lara</td>
+            <td class="pregunta" align="left">¿Quién gano el campeonato de futbol?</td>
+            <td class="responder" align="right" width="40px">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">11:49</td>
+            <td class="user">Francisco Manqui</td>
+            <td class="pregunta" align="left">¿Quién es el nuevo presidente de la FEUACH?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">13:03</td>
+            <td class="user">Francisco Bahamondes</td>
+            <td class="pregunta" align="left">¿Qué está ocurriendo afuera del campus miraflores en este momento?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">13:24</td>
+            <td class="user">Ricardo Coronado</td>
+            <td class="pregunta" align="left">¿Tangananica o tanganana?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">14:32</td>
+            <td class="user">José Ortega</td>
+            <td class="pregunta" align="left">¿Quiénes son los genios que crearon esta página?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time" width="40px">10:22</td>
+            <td class="user" width="25%">Sebastian Lara</td>
+            <td class="pregunta" align="left">¿Quién gano el campeonato de futbolAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaa?</td>
+            <td class="responder" align="right" width="40px">Ver</td>
+          </tr>
+          <tr>
+            <td class="time" width="40px">10:22</td>
+            <td class="user" width="25%">Sebastian Lara</td>
+            <td class="pregunta" align="left">¿Quién gano el campeonato de futbol?</td>
+            <td class="responder" align="right" width="40px">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">11:49</td>
+            <td class="user">Francisco Manqui</td>
+            <td class="pregunta" align="left">¿Quién es el nuevo presidente de la FEUACH?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">13:03</td>
+            <td class="user">Francisco Bahamondes</td>
+            <td class="pregunta" align="left">¿Qué está ocurriendo afuera del campus miraflores en este momento?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">13:24</td>
+            <td class="user">Ricardo Coronado</td>
+            <td class="pregunta" align="left">¿Tangananica o tanganana?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">14:32</td>
+            <td class="user">José Ortega</td>
+            <td class="pregunta" align="left">¿Quiénes son los genios que crearon esta página?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time" width="40px">10:22</td>
+            <td class="user" width="25%">Sebastian Lara</td>
+            <td class="pregunta" align="left">¿Quién gano el campeonato de futbolAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaa?</td>
+            <td class="responder" align="right" width="40px">Ver</td>
+          </tr>
+          <tr>
+            <td class="time" width="40px">10:22</td>
+            <td class="user" width="25%">Sebastian Lara</td>
+            <td class="pregunta" align="left">¿Quién gano el campeonato de futbol?</td>
+            <td class="responder" align="right" width="40px">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">11:49</td>
+            <td class="user">Francisco Manqui</td>
+            <td class="pregunta" align="left">¿Quién es el nuevo presidente de la FEUACH?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">13:03</td>
+            <td class="user">Francisco Bahamondes</td>
+            <td class="pregunta" align="left">¿Qué está ocurriendo afuera del campus miraflores en este momento?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">13:24</td>
+            <td class="user">Ricardo Coronado</td>
+            <td class="pregunta" align="left">¿Tangananica o tanganana?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time">14:32</td>
+            <td class="user">José Ortega</td>
+            <td class="pregunta" align="left">¿Quiénes son los genios que crearon esta página?</td>
+            <td class="responder" align="right">Ver</td>
+          </tr>
+          <tr>
+            <td class="time" width="40px">10:22</td>
+            <td class="user" width="25%">Sebastian Lara</td>
+            <td class="pregunta" align="left">¿Quién gano el campeonato de futbolAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaa?</td>
+            <td class="responder" align="right" width="40px">Ver</td>
+          </tr>
+        </table>
+      </div>
+  </div>
+
+  <!-- FIN SECCION 4 -->
+
+  <!-- SECCION 5 "Ver Mas Popu" -->
+  <div id="verMasPopu" class="SECCION5" style="display:none">
+    <div class="superior">
+      <div class="elemento1"></div>
+      <div class="elemento2">Preguntas Populares</div>
+      <div class="elemento3">Volver</div>
+    </div>
+
+    <div class="cont">
+      <table>
+        <tr>
+          <td class="rank" width="3%">1.</td>
+          <td class="comments" width="5%">(567)</td>
+          <td class="points" width="5%">(77)</td>
+          <td class="user" width="17%">Francisco Bahamondes</td>
+          <td class="question" width="65">¿Qué está ocurriendo en el campus miraflores en este momento?</td>
+          <td class="responder" width="5%">Ver</td>
+        </tr>
+        <tr>
+          <td class="rank" width="3%">2.</td>
+          <td class="comments" width="5%">(311)</td>
+          <td class="points" width="5%">(91)</td>
+          <td class="user" width="17%">Eduardo Hopperdietzel</td>
+          <td class="question" width="65">¿Cuál era tu beatle preferido?</td>
+          <td class="responder" width="5%">Ver</td>
+        </tr>
+        <tr>
+          <td class="rank" width="3%">3.</td>
+          <td class="comments" width="5%">(187)</td>
+          <td class="points" width="5%">(32)</td>
+          <td class="user" width="17%">Sebastián Lara</td>
+          <td class="question" width="65">¿Cuáles son las ventajas de la marihuana?</td>
+          <td class="responder" width="5%">Ver</td>
+        </tr>
+        <tr>
+          <td class="rank" width="3%">4.</td>
+          <td class="comments" width="5%">(86)</td>
+          <td class="points" width="5%">(15)</td>
+          <td class="user" width="17%">Francisco Manqui</td>
+          <td class="question" width="65">¿Podría el trago dejarme más duro?</td>
+          <td class="responder" width="5%">Ver</td>
+        </tr>
+        <tr>
+          <td class="rank" width="3%">5.</td>
+          <td class="comments" width="5%">(36)</td>
+          <td class="points" width="5%">(19)</td>
+          <td class="user" width="17%">Felipe Salazar</td>
+          <td class="question" width="65">¿Sospechan que hay PDI's en la facultad?</td>
+          <td class="responder" width="5%">Ver</td>
+        </tr>
+        <tr>
+          <td class="rank" width="3%">6.</td>
+          <td class="comments" width="5%">(27)</td>
+          <td class="points" width="5%">(12)</td>
+          <td class="user" width="17%">Ignacio Samur</td>
+          <td class="question" width="65">¿Cómo se llama la chica de pelo corto, creo que estudia industrial..?</td>
+          <td class="responder" width="5%">Ver</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+
+  <!-- FIN SECCION 5 -->
+
+  <style>
+
+  /* SECCION2 */
+
+  /* Parte superior */
+
+  #misPregContainer .Superior{
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+  }
+
+  #misPregContainer .elemento2{
+    color: var(--celeste);
+    margin-top: 10px;
+  }
+
+  #misPregContainer .elemento3{
+    color: var(--naranjo);
+    margin-top: 10px;
+  }
+
+  #misPregContainer .Superior .elemento3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  #misPregContainer .Superior{
+    width: calc(100% - 20px);
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  /*Parte inferior*/
+  #misPregContainer .Inferior{
+    width:calc(100% - 20px);
+    max-height: 550px;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow-y: scroll;
+  }
+
+  #misPregContainer .Inferior .message{
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+
+    justify-content: center;
+    height: 60px;
+    margin-top: 20px;
+    color: #8c8c8c;
+  }
+
+  #misPregContainer .Inferior .date{
+    width: 50px;
+    padding: 10px;
+    color: #ccc;
+  }
+
+  #misPregContainer .Inferior .question{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #8c8c8c;
+  }
+
+  #misPregContainer .Inferior .see{
+    color: #8c8c8c;
+    cursor: pointer;
+  }
+
+  #misPregContainer .Inferior .see:hover{
+    text-decoration: underline;
+  }
+
+
+  #misPregContainer .Inferior .editPhoto{
+    height: 20px;
+    cursor: pointer;
+  }
+
+  /* FIN SECCION 2 */
+
+  /* SECCION 3 */
+
+  #VerPregunta .superior{
+    width:calc(100% - 20px);
+    background-color: white;
+    border-radius: 5px;
+    padding-bottom: 10px;
+  }
+
+  #VerPregunta .autor{
+    display: inline-block;
+    color: var(--celeste);
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  #VerPregunta .volverBtn{
+    float:right;
+    padding-top: 10px;
+    padding-right: 10px;
+    color: var(--naranjo);
+  }
+
+  #VerPregunta .volverBtn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  #VerPregunta .user{
+    color: var(--naranjo);
+    font-weight: bold;
+  }
+
+  #VerPregunta .user:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+  }
+
+  #VerPregunta .user:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+
+  #VerPregunta .question{
+    display: inline-block;
+    color: var(--celeste);
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  #VerPregunta .question2{
+    color: #8c8c8c;
+  }
+
+  #VerPregunta .descriptionSpan{
+    color: var(--celeste);
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  #VerPregunta .description{
+    width: calc(100% - 40px);
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    color: #ccc;
+    text-align: center;
+    padding: 5px;
+  }
+
+  #VerPregunta .multimedia{
+    color: var(--celeste);
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  #VerPregunta .multiContainer{
+    height: 30px;
+    width: calc(100% - 40px);
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    color: #ccc;
+    padding: 3px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  #VerPregunta .lowerBar{
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #VerPregunta .lowerBar .responderBtn{
+    width: 140px;
+    background-color: var(--verde);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 10px;
+  }
+
+  #VerPregunta .lowerBar .visitas{
+    color: var(--verde);
+    margin-right: 5px;
+  }
+
+  #VerPregunta .lowerBar .givePoints{
+    width: 60px;
+    background-color: var(--naranjo);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  #VerPregunta .lowerBar .currentPoints{
+    color: var(--naranjo);
+    padding-left: 5px;
+    border-left: 1px solid #ccc;
+  }
+
+  #VerPregunta .inferior{
+    width:calc(100% - 30px);
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #8c8c8c;
+  }
+
+  #VerPregunta .inferior .noComments{
+    text-align: center;
+  }
+
+  /* FIn seccion 3 */
+
+  /* SECCION 4 */
+  #verMasRec .superior{
+    width:calc(100% - 20px);
+    background-color: white;
+    border-radius: 5px;
+
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #verMasRec .superior .elemento2{
+    color: var(--celeste);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #verMasRec .superior .elemento3{
+    color: var(--naranjo);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #verMasRec .superior .elemento3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  #verMasRec .optionsBar{
+    width: calc(100% - 20px);
+    height: 50px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #verMasRec .optionsBar .elemento1{
+    color: #b7b7b7;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+  }
+
+  #verMasRec .optionsBar .elemento2{
+    color:#b7b7b7;
+  }
+
+  #verMasRec .optionsBar .elemento3{
+    color:#b7b7b7;
+  }
+
+  #verMasRec .optionsBar .elemento4{
+    width: 100px;
+    background-color: var(--naranjo);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 4px;
+  }
+
+  #verMasRec .optionsBar .elemento4:hover{
+    cursor: pointer;
+  }
+
+  #verMasRec .cont{
+    width: calc(100% - 30px);
+    padding:5px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+
+  }
+
+  #verMasRec .cont table{
+    width: 100%;
+    font-size: 14px;
+  }
+  #verMasRec .cont td{
+    padding: 5px;
+    color: #8c8c8c;
+  }
+  #verMasRec .cont .time{
+    color: #8c8c8c;
+  }
+  #verMasRec .cont .user{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--celeste);
+    max-width: 80px;
+  }
+  #verMasRec .cont .user:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  #verMasRec .cont .pregunta{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #8c8c8c;
+    max-width: 200px;
+  }
+  #verMasRec .cont .responder{
+    cursor: pointer;
+    color: var(--celeste);
+    padding-right: 20px;
+  }
+
+  #verMasRec .cont .responder:hover{
+    text-decoration: underline;
+  }
+
+  /*FIN SECCION 4*/
+
+  /* SECCION 5 */
+
+  #verMasPopu .superior{
+    width:calc(100% - 20px);
+    background-color: white;
+    border-radius: 5px;
+
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #verMasPopu .superior .elemento2{
+    color: var(--celeste);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #verMasPopu .superior .elemento3{
+    color: var(--naranjo);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #verMasPopu .superior .elemento3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  #verMasPopu .optionsBar{
+    width: calc(100% - 20px);
+    height: 50px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #verMasPopu .optionsBar .elemento1{
+    color: #b7b7b7;
+  }
+
+  #verMasPopu .optionsBar .elemento2{
+    color:#b7b7b7;
+  }
+
+  #verMasPopu .optionsBar .elemento3{
+    color:#b7b7b7;
+  }
+
+  #verMasPopu .optionsBar .elemento4{
+    width: 100px;
+    background-color: var(--naranjo);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 4px;
+  }
+
+  #verMasPopu .optionsBar .elemento4:hover{
+    cursor: pointer;
+  }
+
+  #verMasPopu .cont{
+    width: calc(100% - 30px);
+    padding:5px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+
+  }
+
+  #verMasPopu .cont table{
+    width: 100%;
+    font-size: 14px;
+  }
+  #verMasPopu .cont td{
+    padding: 5px;
+    color: #8c8c8c;
+  }
+  #verMasPopu .cont .rank{
+    font-weight: bold;
+  }
+  #verMasPopu .cont .comments{
+    color: var(--verde);
+  }
+  #verMasPopu .cont .points{
+    color: var(--naranjo);
+  }
+  #verMasPopu .cont .user{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--celeste);
+    max-width: 80px;
+  }
+  #verMasPopu .cont .user:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  #verMasPopu .cont .question{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #8c8c8c;
+    max-width: 200px;
+  }
+  #verMasPopu .cont .responder{
+    cursor: pointer;
+    color: var(--celeste);
+    padding-right: 20px;
+  }
+
+  #verMasPopu .cont .responder:hover{
+    text-decoration: underline;
+  }
+
+
+  /*FIN SECCION 5 */
+
+  </style>
+
+<script>
+
+$(".SECCION1 .boton2").click(function(){
+  $(".SECCION1").hide();
+  $(".SECCION2").show();
+});
+
+$(".Superior .elemento3").click(function(){
+  $(".SECCION2").hide();
+  $(".SECCION1").show();
+});
+
+$(".RecCont .responder").click(function(){
+  $(".SECCION1").hide();
+  $(".SECCION3").show();
+});
+
+$('.SECCION3  .volverBtn').click(function(){
+  $('.SECCION3').hide();
+  $('.SECCION1').show();
+});
+
+$(".RecCont .verMas1").click(function(){
+  $(".SECCION1").hide();
+  $(".SECCION4").show();
+});
+
+$(".SECCION4 .superior .elemento3").click(function(){
+  $(".SECCION4").hide();
+  $(".SECCION1").show();
+});
+
+$(".PopuCont .verMas1").click(function(){
+  $(".SECCION1").hide();
+  $(".SECCION5").show();
+});
+
+$(".SECCION5 .superior .elemento3").click(function(){
+  $(".SECCION5").hide();
+  $(".SECCION1").show();
+});
+
+
+</script>

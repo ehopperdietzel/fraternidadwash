@@ -1,0 +1,361 @@
+/* Configuraciones */
+
+:root {
+  --azul:#0071bc;
+  --celeste: #3fa9f5;
+  --verde:#7ac943;
+  --rojo:#ff1d25;
+  --naranjo:#ff931e;
+  --gris:#bdccd4;
+  --rosado:#ff7bac;
+}
+
+a{
+  width:100%;
+  font-size:11px;
+  color:var(--celeste);
+  padding:15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover{
+  opacity: 0.7;
+}
+
+.invisibleConf{
+  width:150px;
+  padding:7px;
+  display: inline-block;
+}
+
+/*Ventana Titulo*/
+
+.confWindow{
+  z-index: 9;
+  position:relative;
+  padding: 0px;
+  width: calc(100% - 10px);
+  padding-top: 0px;
+  
+}
+.confWindow .postWindow{
+  margin-top: 0;
+  margin-left: 0;
+  width:calc(100% - 20px);
+  padding:10px;
+}
+
+/*Contenedor principal: conf*/
+.conf{
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+
+  flex-direction: row;
+  /*justify-content:space-around;*/
+
+}
+
+/*Primera Lista: Menu*/
+
+.confList{
+  width: 200px;
+}
+
+.confWindow .postWindow .title{
+  color:var(--celeste);
+  font-size: 11px;
+}
+
+.confList .titulo{
+  font-size:13px;
+  font-weight:bold;
+  color:#FFF;
+  margin:10px;
+}
+.confList .tabla{
+  width:100%;
+  font-size:11px;
+  color:var(--celeste);
+  padding:9px;
+}
+.confList .A{
+  background:#FFF;
+
+}
+.confList .A img{
+  width: 20px;
+  height: 20px;
+}
+.confList .B{
+  background:#FAFAFA;
+
+}
+.confList .B img{
+  width: 20px;
+  height: 20px;
+}
+
+/*Segunda Lista: Datos Personales*/
+
+.confListDos{
+  width: 600px;
+}
+
+.confListDos .titulo{
+  font-size:13px;
+  font-weight:bold;
+  color:#FFF;
+  margin:10px;
+}
+.confListDos .tabla{
+  width:100%;
+  font-size:11px;
+  color:var(--celeste);
+  padding:9px;
+}
+.confListDos .A{
+  background:#FFF;
+
+}
+.confListDos .B{
+  background:#FAFAFA;
+
+}
+.confListDos td{
+    text-align: left;
+    padding: 8px;
+    width:165px;
+    
+}
+
+.confListDos td:nth-child(1){
+    font-weight: bold;
+}
+
+.confListDos td:nth-child(3){
+    text-align: right;
+    /*font-weight: bold;*/
+}
+
+/*Tercera Lista: Privacidad*/
+
+.confListTres{
+  width: 600px;
+  display: none;
+  padding-bottom: 30px;
+}
+
+.confListTres .titulo{
+  font-size:13px;
+  font-weight:bold;
+  color:#FFF;
+  margin:10px;
+}
+.confListTres .tabla{
+  width:100%;
+  font-size:11px;
+  color:var(--celeste);
+  padding:9px;
+}
+.confListTres .A{
+  background:#FFF;
+
+}
+.confListTres .B{
+  background:#FAFAFA;
+
+}
+.confListTres td{
+    text-align: left;
+    padding: 8px;
+    width:120px;
+
+}
+.confListTres td:nth-child(2){
+    width:390px;
+    font-weight: bold;
+}
+
+.confListTres .B td:nth-child(2){
+    font-weight: normal;
+}
+
+.confListTres tr:nth-child(1){
+    font-weight: bold;
+}
+.confListTres tr:nth-child(2){
+    font-weight: bold;
+}
+.confListTres tr:nth-child(3){
+    font-weight: bold;
+}
+
+/*Cuarta Lista: Bloqueos*/
+
+.confListCuatro{
+  width: 600px;
+  padding-bottom: 30px;
+  display: none;
+  
+}
+
+.confListCuatro .whiteW{
+  overflow: visible;
+}
+
+.confListCuatro a{
+  font-weight: bold;
+}
+.confListCuatro .titulo{
+  font-size:13px;
+  font-weight:bold;
+  color:#FFF;
+  margin:10px;
+}
+.confListCuatro .tabla{
+  width:100%;
+  font-size:11px;
+  color:var(--celeste);
+  padding:9px;
+}
+
+.confListCuatro .A{
+  background:#FFF;
+  border-radius: 10px;
+}
+.confListCuatro .B{
+  background:#FAFAFA;
+}
+
+.confListCuatro td{
+    text-align: left;
+    padding: 8px;
+    width:120px;
+    
+}
+.confListCuatro td:nth-child(2){
+    width:230px;
+    font-weight: normal;
+}
+
+.confListCuatro .select {
+    width:230px;
+}
+
+.confListCuatro .selfrat {
+    width:200px;
+}
+
+.confListCuatro td input{
+    width:200px;
+}
+
+.confListCuatro tr:nth-child(1){
+    font-weight: bold;
+}
+.confListCuatro tr:nth-child(2){
+    font-weight: bold;
+}
+.confListCuatro tr:nth-child(3){
+    font-weight: bold;
+}
+
+.confListCuatro .lock button{
+  background-color: #3fa9f5;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.confListCuatro .lock button:hover{
+  opacity: 0.7;
+}
+
+/*Quinta Lista: Notificaciones*/
+
+.confListCinco{
+  width: 600px;
+  display: none;
+}
+
+.confListCinco .titulo{
+  font-size:13px;
+  font-weight:bold;
+  color:#FFF;
+  margin:10px;
+}
+.confListCinco .tabla{
+  width:100%;
+  font-size:11px;
+  color:var(--celeste);
+  padding:9px;
+}
+.confListCinco .A{
+  background:#FFF;
+
+}
+.confListCinco .B{
+  background:#FAFAFA;
+
+}
+.confListCinco td{
+    text-align: left;
+    padding: 8px;
+    width:120px;
+    
+}
+
+.confListCinco td:nth-child(2){
+    width:400px;
+}
+
+.confListCinco td img{
+    width: 20px;
+    height: 20px;
+}
+
+.confListCinco tr:nth-child(1){
+    font-weight: bold;
+}
+.confListCinco tr:nth-child(2){
+    font-weight: bold;
+}
+.confListCinco tr:nth-child(3){
+    font-weight: bold;
+}
+
+#not{
+  font-weight: normal;
+}
+
+/*Lista de bloqueos*/
+
+.usblock{
+  position: relative;
+}
+
+.usrblock{
+  width:200px;
+
+
+}
+
+#listalock{
+  width:200px;
+  height: 300px;
+  overflow-y:scroll;
+  background-color: white;
+  position: absolute;
+  display: none;
+}
+
+#listalock div{
+  cursor: pointer;
+}
