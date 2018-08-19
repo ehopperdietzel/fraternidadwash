@@ -22,11 +22,15 @@ var mongoURL      = process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT
 
 
 
-var port          = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3002 ;
-var ipaddress     = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port          = process.env.OPENSHIFT_NODEJS_PORT  || process.env.PORT || 3002 ;
+var ipaddress     = process.env.OPENSHIFT_NODEJS_IP || "201.186.34.236" || "127.0.0.1";
 var year          = 2016;
 var carreras      = JSON.parse(fs.readFileSync(__dirname + '/public/json/carreras.json', 'utf8'));
 
+if(process.env.OPENSHIFT_MONGODB_DB_URL)
+{
+  mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME;
+}
 
 //Conectar con base de Datos Mongo
 MongoClient.connect(mongoURL, function(err, db) {

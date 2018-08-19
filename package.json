@@ -17,7 +17,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node --use_strict index.js"
+    "start": "node index.js"
   },
   "private": true,
   "license": "ISC",
