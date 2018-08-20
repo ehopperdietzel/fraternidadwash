@@ -25,7 +25,7 @@ var ipaddress     = process.env.OPENSHIFT_NODEJS_IP || "201.186.34.236" || "127.
 
 var port = 8080;
 var ipaddress   = '172.30.170.217';
-var mongoURL = "mongodb://admin:admin123@ds125862.mlab.com:25862/fraternidadwash";
+var mongoURL = "mongodb://admin:password123@ds125862.mlab.com:25862/fraternidadwash";
 
 
 
