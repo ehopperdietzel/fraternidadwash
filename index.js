@@ -57,7 +57,7 @@ MongoClient.connect(mongoURL, function(err, db) {
 
   imgur.setClientID("a4890278a765a8e");
 
-  http.listen( port, function() {
+  http.listen( port, ipaddress,function() {
     console.log((new Date()) + ' Server is listening on port ' + port);
   });
 
