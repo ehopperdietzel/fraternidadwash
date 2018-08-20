@@ -23,7 +23,7 @@ var port          = 8080;
 var ipaddress     = "172.30.84.32";
 
 
-var mongoURL = "mongodb://admin:password123@ds125862.mlab.com:25862/fraternidadwash";
+var mongoURL = process.env.MDB;
 
 
 
