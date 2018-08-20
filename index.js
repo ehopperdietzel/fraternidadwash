@@ -23,9 +23,9 @@ var port          = process.env.OPENSHIFT_NODEJS_PORT  || process.env.PORT || 30
 var ipaddress     = process.env.OPENSHIFT_NODEJS_IP || "201.186.34.236" || "127.0.0.1";
 */
 
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var ipaddress   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-var mongoURL = "mongodb://"+process.env.MONGODB_USER+":"+process.env.MONGODB_PASSWORD+"@"+process.env.OPENSHIFT_NODEJS_IP+":27017/"+process.env.MONGODB_DATABASE;
+var port = 8080;
+var ipaddress   = '172.30.170.217';
+var mongoURL = "mongodb://userKDF:m1Vvvguiw2r7DfdF@172.30.168.192:27017/sampledb";
 
 
 
