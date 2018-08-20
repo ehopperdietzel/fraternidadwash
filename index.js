@@ -19,8 +19,8 @@ var sockets       = new Object();
 
 
 //var mongoURL      = process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME || 'mongodb://localhost:27017/fraternidadwash';
-var port          = process.env.OPENSHIFT_NODEJS_PORT  || process.env.PORT || 8080 || 3002 ;
-var ipaddress     = process.env.OPENSHIFT_NODEJS_IP || "201.186.34.236" || "127.0.0.1" || '172.30.170.217' || "'0.0.0.0'";
+var port          = 8080;
+var ipaddress     = "127.0.0.1" || "172.30.84.32";
 
 
 var mongoURL = "mongodb://admin:password123@ds125862.mlab.com:25862/fraternidadwash";
