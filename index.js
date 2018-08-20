@@ -20,7 +20,7 @@ var sockets       = new Object();
 
 //var mongoURL      = process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME || 'mongodb://localhost:27017/fraternidadwash';
 var port          = 8080;
-var ipaddress     = "127.0.0.1" || "172.30.84.32";
+var ipaddress     = "172.30.84.32";
 
 
 var mongoURL = "mongodb://admin:password123@ds125862.mlab.com:25862/fraternidadwash";
